@@ -1,0 +1,48 @@
+name: 9 Sinif Arena APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'android-wrapper/**'
+      - 'assets/zeus-real-v10.webp'
+      - '.github/workflows/build-arena-apk.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Android 16 SDK kur
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Zeus ve ikonlari APK icine gom
+        run: |
+          set -e
+          mkdir -p android-wrapper/app/src/main/res/drawable-nodpi
+          mkdir -p android-wrapper/app/src/main/assets
+          cp assets/zeus-real-v10.webp android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
+          cp assets/zeus-real-v10.webp android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
+          cp assets/zeus-real-v10.webp android-wrapper/app/src/main/assets/zeus.webp
+          file android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
+          file android-wrapper/app/src/main/assets/zeus.webp
+      - name: Gradle 9.5 kur
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-9.5.0-bin.zip
+          unzip -q gradle-9.5.0-bin.zip
+          echo "$PWD/gradle-9.5.0/bin" >> $GITHUB_PATH
+      - name: Android 16 APK olustur
+        working-directory: android-wrapper
+        run: gradle --no-daemon assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 9-Sinif-Arena-Android16-APK
+          path: android-wrapper/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
