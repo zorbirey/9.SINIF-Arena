@@ -1,11 +1,48 @@
-:root{--safeTop:env(safe-area-inset-top,0px);--safeBottom:env(safe-area-inset-bottom,0px)}
-html,body{overscroll-behavior:none;touch-action:manipulation;background:#010712}
-#app{height:100dvh;min-height:100dvh;max-width:480px}
-.topbar{height:calc(var(--top) + var(--safeTop));padding-top:var(--safeTop)}
-.view{top:calc(var(--top) + var(--safeTop));bottom:calc(var(--nav) + var(--safeBottom))}
+:root{--safeTop:env(safe-area-inset-top,0px);--safeBottom:env(safe-area-inset-bottom,0px);--top:64px;--nav:74px}
+html,body{overscroll-behavior:none;touch-action:manipulation;background:#010712;font-size:16px}
+#app{height:100dvh;min-height:100dvh;max-width:480px;overflow:hidden}
+.topbar{height:calc(var(--top) + var(--safeTop));padding-top:var(--safeTop);padding-left:12px;padding-right:12px}
+.view{top:calc(var(--top) + var(--safeTop));bottom:calc(var(--nav) + var(--safeBottom));padding:9px}
 .bottom-nav{height:calc(var(--nav) + var(--safeBottom));padding-bottom:var(--safeBottom)}
-.install-btn{border:1px solid #735d21;background:linear-gradient(135deg,#7d5c16,#e8bd4b);color:#09111e;border-radius:999px;padding:5px 8px;font-size:8px;font-weight:950;white-space:nowrap}
+
+/* Genel okunabilirlik */
+.brand{font-size:15px;gap:7px}.brand .bolt{font-size:24px}.chip{font-size:11px;padding:6px 8px}.install-btn{border:1px solid #8f7226;background:linear-gradient(135deg,#7d5c16,#e8bd4b);color:#09111e;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:950;white-space:nowrap}
+.view-title{min-height:34px;margin-bottom:7px}.view-title h2{font-size:20px;line-height:1.05}.view-title small{font-size:12px}
+button{min-height:42px}.card{border-width:1px}
+
+/* ZEUS: her ana alanda görünür ve büyük */
+.zeus-avatar{width:40px!important;height:40px!important;min-width:40px!important;background-image:var(--zeus)!important;background-size:cover!important;background-position:center 18%!important;border:2px solid #e4b64b!important;box-shadow:0 0 0 2px #0b2745,0 0 18px rgba(49,167,255,.45)!important}
+.hero{position:relative!important;overflow:hidden!important;padding:12px 42% 10px 12px!important;background:linear-gradient(90deg,rgba(4,19,37,.98) 0%,rgba(4,19,37,.92) 52%,rgba(4,19,37,.22) 100%),var(--zeus)!important;background-size:auto,58% auto!important;background-repeat:no-repeat!important;background-position:0 0,108% 22%!important;border-color:#356995!important;box-shadow:inset 0 0 34px rgba(46,147,233,.10)!important}
+.hero::after{content:'ZEUS';position:absolute;right:9px;bottom:8px;color:#f0c34f;font-size:10px;font-weight:950;letter-spacing:1.4px;text-shadow:0 1px 4px #000}
+.hero-copy small{font-size:11px!important;color:#f1c55e!important;font-weight:900!important}.hero-copy h1{font-size:21px!important;line-height:1.02!important;margin:3px 0 6px!important}.level{font-size:10px!important;padding:5px 7px!important}
+.countdown{gap:4px!important}.countdown div{padding:6px 3px!important}.countdown div b{font-size:19px!important}.countdown div small{font-size:9px!important}.xp-row{font-size:10px!important;gap:5px!important}.inspired{font-size:9px!important;letter-spacing:1.1px!important}
+.coach-banner{grid-template-columns:58px 1fr 18px!important;gap:9px!important;padding:8px 10px!important;min-height:70px!important}.coach-banner .zeus-face,.note-modal .zeus-face{width:54px!important;height:54px!important;background-image:var(--zeus)!important;background-size:cover!important;background-position:center 18%!important;border:2px solid #c89b35!important;border-radius:15px!important;box-shadow:0 0 16px rgba(50,165,255,.30)!important}.coach-banner b{font-size:14px!important;color:#f3c95b!important}.coach-banner small{font-size:11px!important;line-height:1.25!important;margin-top:3px!important}.coach-banner em{font-size:26px!important}
+.zeus-hero{grid-template-columns:104px 1fr!important;gap:11px!important;padding:9px!important;min-height:122px!important}.zeus-big{width:104px!important;height:112px!important;display:block!important;background-image:var(--zeus)!important;background-size:cover!important;background-position:center 16%!important;border-radius:16px!important;border:2px solid #d1a341!important;box-shadow:0 0 20px rgba(42,157,248,.32)!important}.zeus-hero h3{font-size:13px!important;color:#f0c34f!important}.zeus-hero p{font-size:12px!important;line-height:1.32!important}.mini-pills span{font-size:10px!important;padding:5px 7px!important}
+
+/* Ana menü */
+.home-grid{gap:7px!important;grid-template-rows:1.25fr .72fr 1.55fr!important}
+.quick-grid{gap:7px!important}.quick-grid button{padding:8px 4px!important;min-height:72px!important}.quick-grid button i{font-size:28px!important;line-height:1!important;margin-bottom:3px!important}.quick-grid button b{font-size:12px!important;line-height:1.05!important}.quick-grid button small{font-size:10px!important;line-height:1.15!important;margin-top:3px!important}
+
+/* Alt navigasyon */
+.bottom-nav button i{font-size:25px!important}.bottom-nav button span{font-size:11px!important;font-weight:850!important}.bottom-nav button{gap:3px!important}
+
+/* Dersler */
+.lesson-grid{gap:7px!important}.lesson-card{padding:7px 4px!important}.lesson-card i{font-size:29px!important;margin-bottom:4px!important}.lesson-card b{font-size:11px!important;line-height:1.05!important}.lesson-card small{font-size:9.5px!important;line-height:1.1!important;margin-top:3px!important}.note-badge{font-size:8.5px!important;padding:4px 5px!important}
+
+/* Zeus görevleri */
+.tasks{padding:8px!important}.tasks h4,.leaderboard h4{font-size:11px!important}.tasks button{padding:7px 7px!important;min-height:50px!important}.tasks button i{font-size:23px!important}.tasks button b{font-size:11.5px!important}.tasks button small{font-size:10px!important}.tasks button em{font-size:9.5px!important;padding:6px!important}.tool-grid{gap:7px!important}.tool-grid button{padding:8px!important}.tool-grid button b{font-size:11px!important}.tool-grid button small{font-size:9.5px!important;line-height:1.2!important}
+
+/* Sınavlar */
+.exam-card{padding:10px!important;gap:9px!important}.exam-card>i{font-size:30px!important}.exam-card span b{font-size:12px!important}.exam-card span small{font-size:10px!important;line-height:1.2!important}.exam-card>button{font-size:10px!important;padding:8px 9px!important}.exam-bottom div>b{font-size:24px!important}.exam-bottom div>small{font-size:10px!important}.exam-bottom button{font-size:10px!important;padding:9px!important}
+
+/* Profil ve raporlar */
+.tabs button{font-size:10px!important;padding:8px 4px!important}.rank-card small{font-size:10px!important}.rank-card>b{font-size:26px!important}.rank-card span{font-size:10px!important}.leaderboard>div{font-size:11px!important}.leaderboard>div span,.leaderboard>div em{font-size:10px!important}.demo-note{font-size:10.5px!important;line-height:1.3!important}.report-top b{font-size:24px!important}.report-top small{font-size:10px!important}.bars{font-size:11px!important}.settings label{font-size:11px!important}.settings input,.settings select{font-size:14px!important;min-height:42px!important}.settings>button,.premium button{font-size:11px!important}.premium b{font-size:12px!important}.premium small{font-size:10px!important}
+
+/* Soru çözme / not / açık uçlu */
+.question-head span,.question-head b{font-size:10.5px!important}.question-card h3{font-size:15px!important;line-height:1.32!important}.question-meta small,.question-meta b{font-size:10px!important}.option{font-size:13px!important;line-height:1.25!important;padding:9px 8px!important}.option i,.option .letter{font-size:12px!important;min-width:27px!important;min-height:27px!important}.question-actions button{font-size:11px!important;padding:8px 5px!important}
+.note-modal header small{font-size:10px!important}.note-modal header h3{font-size:15px!important}.note-modal>h4{font-size:14px!important}.note-grid article b{font-size:10px!important}.note-grid article p{font-size:11.5px!important;line-height:1.28!important}.note-modal footer button{font-size:10px!important}
+.open-modal header small,.open-modal header b{font-size:12px!important}.open-paper p{font-size:13px!important;line-height:1.35!important}.open-paper textarea{font-size:14px!important}.open-modal footer button{font-size:10px!important}.info-modal h3{font-size:18px!important}.info-modal p,.info-modal div{font-size:12.5px!important;line-height:1.35!important}
+
 @media(display-mode:standalone){.install-btn{display:none!important}}
-@media(max-width:430px){#app{max-width:none}.brand{font-size:13px}.chip{font-size:8px}.quick-grid button b{font-size:9px}.quick-grid button small{font-size:7.5px}.lesson-card b{font-size:8.5px}.lesson-card small{font-size:7px}}
-@media(max-width:360px){:root{--top:48px;--nav:57px}.view{padding:6px}.view-title{min-height:24px;margin-bottom:4px}.view-title h2{font-size:14px}.quick-grid button{padding:5px}.countdown div b{font-size:15px}}
-@media(max-height:680px){:root{--top:47px;--nav:55px}.view{padding:5px}.home-grid{gap:5px}.hero{padding:7px}.quick-grid button{padding:5px}.lesson-card i{font-size:18px}.tasks button{padding:3px 5px}.tool-grid button{padding:5px}.zeus-hero{padding:6px}}
+@media(max-width:380px){:root{--top:60px;--nav:70px}.view{padding:7px}.brand{font-size:14px}.hero{padding-right:40%!important;background-size:auto,62% auto!important}.hero-copy h1{font-size:19px!important}.quick-grid button b{font-size:11px!important}.quick-grid button small{font-size:9.5px!important}.lesson-card b{font-size:10.5px!important}.lesson-card small{font-size:9px!important}}
+@media(max-height:700px){:root{--top:58px;--nav:68px}.view{padding:6px}.home-grid{gap:5px!important;grid-template-rows:1.18fr .66fr 1.5fr!important}.hero{padding-top:8px!important;padding-bottom:7px!important}.hero-copy h1{font-size:18px!important}.countdown div{padding:4px 2px!important}.countdown div b{font-size:17px!important}.coach-banner{min-height:62px!important}.coach-banner .zeus-face{width:48px!important;height:48px!important}.quick-grid{gap:5px!important}.quick-grid button{padding:6px 3px!important;min-height:63px!important}.quick-grid button i{font-size:24px!important}.quick-grid button b{font-size:10.5px!important}.quick-grid button small{font-size:9px!important}.view-title h2{font-size:18px!important}.zeus-hero{grid-template-columns:86px 1fr!important;min-height:105px!important}.zeus-big{width:86px!important;height:95px!important}.tasks button{min-height:44px!important;padding:5px!important}.tool-grid button{padding:6px!important}}
