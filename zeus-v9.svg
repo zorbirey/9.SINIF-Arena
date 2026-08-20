@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Tahtında oturan şimşekli Zeus">
+<defs>
+ <radialGradient id="halo" cx="50%" cy="35%" r="58%"><stop offset="0" stop-color="#45baff" stop-opacity=".55"/><stop offset=".55" stop-color="#164b9a" stop-opacity=".2"/><stop offset="1" stop-color="#020817" stop-opacity="0"/></radialGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a1"/><stop offset=".45" stop-color="#e5b747"/><stop offset="1" stop-color="#8e6116"/></linearGradient>
+ <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#174fb6"/><stop offset="1" stop-color="#071c63"/></linearGradient>
+ <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f5cc91"/><stop offset="1" stop-color="#c98049"/></linearGradient>
+ <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".5" stop-color="#d8e6f4"/><stop offset="1" stop-color="#87a8c8"/></linearGradient>
+ <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="eye" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<ellipse cx="400" cy="430" rx="355" ry="390" fill="url(#halo)"/>
+<!-- throne -->
+<path d="M135 860V300q0-55 55-55h420q55 0 55 55v560" fill="#071c43" stroke="url(#gold)" stroke-width="22"/>
+<path d="M185 815V335h115v480M500 815V335h115v480" fill="#0e3578" stroke="url(#gold)" stroke-width="15"/>
+<path d="M95 840h610l38 82H57z" fill="#061a42" stroke="url(#gold)" stroke-width="16"/>
+<path d="M145 270l75-92 70 65 110-108 110 108 70-65 75 92" fill="#0b2c68" stroke="url(#gold)" stroke-width="18" stroke-linejoin="round"/>
+<!-- cape -->
+<path d="M260 385c-82 58-121 164-113 313l76 99 61-46 25-279zM540 385c82 58 121 164 113 313l-76 99-61-46-25-279z" fill="url(#blue)" stroke="#d9aa3c" stroke-width="8"/>
+<!-- torso -->
+<path d="M302 375c21-33 53-52 98-52s77 19 98 52l42 166-140 73-140-73z" fill="url(#skin)" stroke="#9e642e" stroke-width="4"/>
+<path d="M326 393c23 22 48 31 74 31s51-9 74-31" fill="none" stroke="#b26c38" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+<path d="M400 425v145" stroke="#a86637" stroke-width="6" opacity=".6"/>
+<path d="M318 493c26 15 51 17 77 5M405 498c26 12 51 10 77-5" fill="none" stroke="#b16d3b" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+<!-- white drape -->
+<path d="M293 402c24 6 51 25 70 47l79 92-42 61-136-118z" fill="#f6f7fb" stroke="#d6a63d" stroke-width="8"/>
+<!-- head -->
+<ellipse cx="400" cy="280" rx="82" ry="96" fill="url(#skin)"/>
+<!-- hair -->
+<path d="M315 292c-9-72 18-139 85-139s94 67 85 139c-16-36-38-58-55-67-9 17-23 32-42 43-18-23-39-38-73-44z" fill="url(#hair)"/>
+<path d="M325 229c-41 38-52 98-27 141 7-42 25-78 52-105zM475 229c41 38 52 98 27 141-7-42-25-78-52-105z" fill="url(#hair)"/>
+<!-- brows / eyes -->
+<path d="M344 274c18-14 38-18 57-9M456 274c-18-14-38-18-57-9" fill="none" stroke="#5a3a28" stroke-width="9" stroke-linecap="round"/>
+<ellipse cx="365" cy="292" rx="12" ry="8" fill="#8ae9ff" filter="url(#eye)"/><ellipse cx="435" cy="292" rx="12" ry="8" fill="#8ae9ff" filter="url(#eye)"/>
+<circle cx="365" cy="292" r="4" fill="#083f91"/><circle cx="435" cy="292" r="4" fill="#083f91"/>
+<path d="M390 319c7 7 13 7 20 0" fill="none" stroke="#8c5431" stroke-width="5" stroke-linecap="round"/>
+<!-- beard: strong, trimmed -->
+<path d="M333 332c12 61 33 97 67 118 34-21 55-57 67-118-20 17-42 25-67 25s-47-8-67-25z" fill="url(#hair)" stroke="#afc5db" stroke-width="3"/>
+<path d="M352 338c14 24 30 36 48 36s34-12 48-36" fill="none" stroke="#9fbad3" stroke-width="8" stroke-linecap="round"/>
+<!-- arms -->
+<path d="M302 403c-63 12-108 57-129 130-8 29 16 53 45 45l89-26z" fill="url(#skin)" stroke="#9e642e" stroke-width="5"/>
+<path d="M498 403c63 12 108 57 129 130 8 29-16 53-45 45l-89-26z" fill="url(#skin)" stroke="#9e642e" stroke-width="5"/>
+<!-- bracers -->
+<path d="M183 505l65 28-18 55-67-25zM617 505l-65 28 18 55 67-25z" fill="url(#gold)"/>
+<!-- legs seated -->
+<path d="M286 579c-40 74-44 170-13 283h104l23-231-57-73zM514 579c40 74 44 170 13 283H423l-23-231 57-73z" fill="#f6f5f1" stroke="#d5a83e" stroke-width="9"/>
+<path d="M272 838h107l-5 76H250zM528 838H421l5 76h124z" fill="#2c3542" stroke="url(#gold)" stroke-width="12"/>
+<!-- lightning in left hand -->
+<path d="M184 145 113 335h58l-70 177 150-221h-65l79-146z" fill="#fff9b9" stroke="#ffd341" stroke-width="10" stroke-linejoin="round" filter="url(#glow)"/>
+<path d="M165 548c-15-5-24-19-20-34 4-16 19-25 34-20 16 4 25 19 20 34-4 15-19 24-34 20z" fill="url(#skin)"/>
+<!-- right hand -->
+<ellipse cx="615" cy="551" rx="32" ry="25" fill="url(#skin)" transform="rotate(-18 615 551)"/>
+<!-- laurels -->
+<path d="M330 205c-30-16-46-39-48-69 26 10 45 27 58 51M470 205c30-16 46-39 48-69-26 10-45 27-58 51" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round"/>
+<!-- sparks -->
+<path d="M96 594l32-62 7 43 37-18M704 585l-28-58-8 39-34-16" fill="none" stroke="#65ceff" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+</svg>
