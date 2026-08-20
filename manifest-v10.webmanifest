@@ -1,0 +1,15 @@
+{
+  "name": "9. Sınıf Arena 2027",
+  "short_name": "9.Sınıf Arena",
+  "description": "Zeus Koçluğu, Akıllı Notlar ve ortak sınav odaklı 9. sınıf PWA",
+  "start_url": "./arena-v10.html?v=10",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#020817",
+  "theme_color": "#020817",
+  "lang": "tr",
+  "icons": [
+    {"src":"icon-v8.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
