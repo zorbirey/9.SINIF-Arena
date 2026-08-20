@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no,interactive-widget=resizes-content">
+  <meta name="theme-color" content="#020817">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="9. Sınıf Arena">
+  <title>9. Sınıf Arena 2027 — Zeus v8</title>
+  <link rel="manifest" href="manifest-v8.webmanifest">
+  <link rel="icon" href="icon-v8.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="zeus-v8.css">
+</head>
+<body class="gate-locked">
+<div id="app">
+  <section id="splashGate" class="splash-gate" aria-label="Arena giriş ekranı">
+    <div class="splash-shell">
+      <div class="splash-head"><span class="splash-kicker"><i>⚡</i> ZEUS DESTEKLİ EĞİTİM ARENASI</span></div>
+      <div class="splash-art" aria-hidden="true"></div>
+      <div class="splash-bottom"><h1 class="splash-title">9. SINIF <span>ARENA 2027</span></h1><p class="splash-sub">Zeus Koçluğu, Akıllı Notlar, ortak sınavlar ve Arena sıralaması.</p><button class="enter-arena" onclick="enterArena()">ARENAYA GİR</button><small class="enter-hint">Bu butona basmadan uygulamaya girilmez.</small></div>
+    </div>
+  </section>
+
+  <header class="topbar">
+    <div class="brand"><span class="bolt">⚡</span><span>9. SINIF <b>ARENA 2027</b></span></div>
+    <div class="top-right"><button id="installAppBtn" class="install-btn" hidden>＋ KUR</button><span id="xpTop" class="chip">0 XP</span><span class="zeus-avatar" title="Zeus Koçu"></span></div>
+  </header>
+
+  <main class="view active" id="home"><div class="watermark-layer" aria-hidden="true"></div>
+    <div class="home-grid">
+      <section class="card hero">
+        <div class="hero-copy"><small>25 HAZİRAN 2027</small><h1>KARNEYE KALAN</h1></div>
+        <span class="level">SEVİYE <b id="level">1</b></span>
+        <div class="countdown"><div><b id="d">--</b><small>GÜN</small></div><div><b id="h">--</b><small>SAAT</small></div><div><b id="m">--</b><small>DAKİKA</small></div><div><b id="s">--</b><small>SANİYE</small></div></div>
+        <div class="xp-row"><span>ARENA XP</span><div class="progress"><i id="xpBar"></i></div><b id="xpText">0/500</b></div><span class="inspired">INSPIRED FROM ZEUS</span>
+      </section>
+      <button class="card coach-banner" onclick="go('zeus')"><span class="zeus-face"></span><span><b>ZEUS KOÇLUĞU</b><small id="coachHome">Bugünkü hedefini tamamla ve Arena seviyeni yükselt.</small></span><em>›</em></button>
+      <section class="quick-grid"><button onclick="startStudy()"><i>🧠</i><b>SORU ÇÖZ</b><small id="solvedHome">0 soru</small></button><button onclick="go('lessons')"><i>📚</i><b>DERSLER</b><small>9 ders • Akıllı Notlar</small></button><button onclick="go('exams')"><i>📝</i><b>ORTAK SINAV</b><small>Açık uçlu denemeler</small></button><button onclick="openProfile('rank')"><i>🏆</i><b>SIRALAMA</b><small id="rankHome">TR #-- • İL #--</small></button><button onclick="openProfile('report')"><i>📊</i><b>RAPORLAR</b><small>Başarı ve gelişim</small></button><button onclick="openProfile('settings')"><i>⚙️</i><b>PROFİL</b><small id="provinceHome">İstanbul</small></button></section>
+    </div>
+  </main>
+
+  <main class="view" id="lessons"><div class="watermark-layer" aria-hidden="true"></div><div class="view-title"><h2>Ders Arenaları</h2><small>Ders seç • not oku • soru çöz</small></div><div class="lesson-grid" id="lessonGrid"></div></main>
+
+  <main class="view" id="zeus"><div class="watermark-layer" aria-hidden="true"></div><div class="view-title"><h2>Zeus Koçluğu</h2><small>Kişisel çalışma rehberi</small></div><div class="zeus-grid"><section class="card zeus-hero"><span class="zeus-big"></span><div><h3>BUGÜNÜN MESAJI</h3><p id="zeusMessage">Disiplin, ilhamdan daha güvenilir bir güçtür.</p><div class="mini-pills"><span id="goalPill">🎯 0/20</span><span id="streakPill">🔥 1 gün</span></div></div></section><section class="card tasks"><h4>BUGÜNKÜ ÇALIŞMA PLANI</h4><button onclick="startSubject('Matematik')"><i>√x</i><span><b>Matematik • 10 soru</b><small>Sayılar ve nicelikler</small></span><em>BAŞLA</em></button><button onclick="startSubject('Türk Dili ve Edebiyatı')"><i>📖</i><span><b>Türk Dili • 5 soru</b><small>Anlam ve yorum</small></span><em>BAŞLA</em></button><button id="weakTask"><i>⚛</i><span><b id="weakTitle">Fizik • 5 soru</b><small id="weakSub">Zayıf konu takviyesi</small></span><em>BAŞLA</em></button></section><section class="tool-grid"><button onclick="coachTool('program')"><b>📅 Program Oluştur</b><small>Günlük hedefleri düzenle</small></button><button onclick="coachTool('strategy')"><b>🎯 Sınav Stratejisi</b><small>Süre ve soru sırası</small></button><button onclick="openProfile('report')"><b>📈 Performans</b><small>Zayıf dersleri gör</small></button><button onclick="coachTool('motivation')"><b>⚡ Motivasyon</b><small>Zeus’tan mesaj</small></button></section></div></main>
+
+  <main class="view" id="exams"><div class="watermark-layer" aria-hidden="true"></div><div class="view-title"><h2>Deneme Merkezi</h2><small>Normal + açık uçlu</small></div><div class="exam-grid"><section class="card exam-card"><i>∑</i><span><b>MATEMATİK ORTAK SINAV</b><small>7 açık uçlu • 40 dakika • işlem basamakları</small></span><button onclick="startOpen('math')">BAŞLA</button></section><section class="card exam-card literature"><i>✒️</i><span><b>TÜRK DİLİ VE EDEBİYATI</b><small>7 açık uçlu • 40 dakika • yorum ve gerekçe</small></span><button onclick="startOpen('lit')">BAŞLA</button></section><section class="card exam-bottom"><div><b>30</b><small>Arena Deneme 01</small></div><div><b id="bestScore">—</b><small>En iyi puan</small></div><button onclick="startExam()">30 SORULUK DENEME</button></section></div></main>
+
+  <main class="view" id="profile"><div class="watermark-layer" aria-hidden="true"></div><div class="view-title"><h2>Profil ve İstatistik</h2><small id="profileName">Arena Öğrencisi</small></div><div class="tabs"><button data-tab="rank" class="active" onclick="switchTab('rank')">🏆 SIRALAMA</button><button data-tab="report" onclick="switchTab('report')">📊 RAPOR</button><button data-tab="settings" onclick="switchTab('settings')">⚙️ AYARLAR</button></div><section class="pane active" id="pane-rank"><div class="rank-pair"><div class="card rank-card"><small>🇹🇷 TÜRKİYE SIRASI</small><b id="trRank">#—</b><span id="trMeta">Demo sıralama</span></div><div class="card rank-card"><small>📍 <span id="cityLabel">İL</span> SIRASI</small><b id="cityRank">#—</b><span id="cityMeta">Demo sıralama</span></div></div><div class="card leaderboard"><h4>ARENA LİDERLİK TABLOSU</h4><div><b>1</b><span>⚡ Atlas_09</span><em>2.480 soru</em></div><div><b>2</b><span>Nova_34</span><em>2.315 soru</em></div><div><b>3</b><span>MatKing</span><em>2.174 soru</em></div><div class="me"><b id="myRank">—</b><span id="myName">Sen</span><em id="mySolved">0 soru</em></div></div><div class="card demo-note">Sıralama toplam çözülen benzersiz soru sayısına göre ilerler. Eşitlikte doğruluk oranı kullanılır. <b>DEMO VERİSİ</b></div></section><section class="pane" id="pane-report"><div class="report-top"><div><b id="rSolved">0</b><small>Çözülen</small></div><div><b id="rAccuracy">%0</b><small>Doğruluk</small></div><div><b id="rXp">0</b><small>XP</small></div></div><div class="card bars" id="bars"></div></section><section class="pane settings" id="pane-settings"><label>KULLANICI ADI<input id="nameInput" maxlength="20" value="Arena Öğrencisi"></label><label>İL<select id="provinceSelect"></select></label><button onclick="saveSettings()">PROFİLİ KAYDET</button><div class="premium"><span><b>⚡ ARENA PREMIUM</b><small>Reklamsız kullanım • gelişmiş raporlar • ek paketler</small></span><button onclick="toast('Premium ekranı sonraki sürümde bağlanacak.')">İNCELE</button></div></section></main>
+
+  <nav class="bottom-nav"><button class="active" data-view="home" onclick="go('home')"><i>⌂</i><span>ARENA</span></button><button data-view="lessons" onclick="go('lessons')"><i>▣</i><span>DERSLER</span></button><button data-view="zeus" onclick="go('zeus')"><i>⚡</i><span>ZEUS</span></button><button data-view="exams" onclick="go('exams')"><i>▤</i><span>SINAVLAR</span></button><button data-view="profile" onclick="go('profile')"><i>◎</i><span>PROFİL</span></button></nav>
+
+  <div class="overlay" id="questionOverlay"><div class="watermark-layer" aria-hidden="true"></div><section class="modal question-modal"><div class="question-head"><span id="qSubject">Ders</span><span id="qDifficulty">Orta</span><div class="progress"><i id="qProgress"></i></div><b id="qCounter">1/30</b></div><div class="card question-card"><div class="question-meta"><small id="qMode">SERBEST ÇALIŞMA</small><b id="qTimer">Süresiz</b></div><h3 id="qText"></h3><div class="options" id="options"></div></div><div class="question-actions"><button onclick="hint()">💡 İpucu</button><button onclick="solution()">Çözüm Yolu</button><button id="nextQuestion" onclick="nextQ()">Sonraki →</button></div></section></div>
+  <div class="overlay" id="notesOverlay"><div class="watermark-layer" aria-hidden="true"></div><section class="modal note-modal"><header><span class="zeus-face"></span><div><small>AKILLI NOTLAR</small><h3 id="noteSubject">Ders</h3></div><b id="noteCounter">1/2</b></header><h4 id="noteTitle"></h4><div class="note-grid"><article><b>BİLMEN GEREKEN</b><p id="noteInfo"></p></article><article><b>TEMEL KAVRAM</b><p id="noteConcept"></p></article><article class="example"><b>ÖRNEK</b><p id="noteExample"></p></article><article class="warning"><b>DİKKAT</b><p id="noteCaution"></p></article></div><footer><button onclick="notePrev()">← Önceki</button><button onclick="closeNotes()">Kapat</button><button id="noteNext" onclick="noteNext()">Sonraki →</button></footer></section></div>
+  <div class="overlay" id="openOverlay"><div class="watermark-layer" aria-hidden="true"></div><section class="modal open-modal"><header><small id="openTitle">ORTAK SINAV</small><b id="openTimer">40:00</b></header><div class="progress"><i id="openProgress"></i></div><div class="card open-paper"><p id="openQuestion"></p><textarea id="openAnswer" placeholder="Cevabını ve gerekçeni buraya yaz..."></textarea></div><footer><button onclick="openPrev()">← Önceki</button><button onclick="rubric()">Puanlama</button><button id="openNext" onclick="openNext()">Sonraki →</button></footer></section></div>
+  <div class="overlay" id="infoOverlay"><div class="watermark-layer" aria-hidden="true"></div><section class="modal info-modal"><small id="infoKicker">ZEUS</small><h3 id="infoTitle">Bilgi</h3><p id="infoText"></p><div id="infoBox"></div><button onclick="closeInfo()">TAMAM</button></section></div>
+  <div class="toast" id="toast"></div>
+</div>
+<script src="app.js"></script>
+<script>
+(function(){
+  window.enterArena=function(){var gate=document.getElementById('splashGate');gate.classList.add('leaving');setTimeout(function(){gate.hidden=true;document.body.classList.remove('gate-locked');},220)};
+  if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw-v8.js').catch(function(){})})}
+  var deferredPrompt=null,btn=document.getElementById('installAppBtn');
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e;if(btn)btn.hidden=false});
+  if(btn)btn.addEventListener('click',async function(){if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;btn.hidden=true});
+  window.addEventListener('appinstalled',function(){if(btn)btn.hidden=true});
+})();
+</script>
+</body></html>
