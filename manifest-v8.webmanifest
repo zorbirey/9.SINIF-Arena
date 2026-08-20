@@ -1,0 +1,13 @@
+{
+  "name": "9. Sınıf Arena 2027",
+  "short_name": "9.Sınıf Arena",
+  "description": "Zeus Koçluğu, Akıllı Notlar, ortak sınavlar ve Arena sıralaması.",
+  "start_url": "./arena-v8.html?v=8",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#010712",
+  "theme_color": "#020817",
+  "lang": "tr",
+  "icons": [{"src":"icon-v8.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
