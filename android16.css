@@ -1,0 +1,46 @@
+/* 9. Sınıf Arena — Android 16 / API 36 PWA uyumluluk katmanı */
+:root{
+  --safeTop:env(safe-area-inset-top,0px);
+  --safeRight:env(safe-area-inset-right,0px);
+  --safeBottom:env(safe-area-inset-bottom,0px);
+  --safeLeft:env(safe-area-inset-left,0px);
+  --top:70px;
+  --nav:78px;
+  --tap:48px;
+}
+html,body{width:100%;height:100%;margin:0;background:#020817;overscroll-behavior:none;touch-action:manipulation;-webkit-text-size-adjust:100%;text-size-adjust:100%;color-scheme:dark}
+body{min-height:100svh;min-height:100dvh}
+#app{height:100svh!important;height:100dvh!important;min-height:100svh!important;min-height:100dvh!important;max-width:520px!important}
+button,input,select,textarea{font-size:16px}
+button,.install-btn,.tabs button,.tasks button,.tool-grid button,.exam-card button,.question-actions button,.note-modal footer button,.open-modal footer button{min-height:var(--tap)!important}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #72d9ff;outline-offset:2px}
+.topbar{height:calc(var(--top) + var(--safeTop))!important;padding-top:var(--safeTop)!important;padding-left:max(12px,var(--safeLeft))!important;padding-right:max(12px,var(--safeRight))!important}
+.view{top:calc(var(--top) + var(--safeTop))!important;bottom:calc(var(--nav) + var(--safeBottom))!important;padding-left:max(8px,var(--safeLeft))!important;padding-right:max(8px,var(--safeRight))!important}
+.bottom-nav{height:calc(var(--nav) + var(--safeBottom))!important;padding-bottom:var(--safeBottom)!important;padding-left:var(--safeLeft)!important;padding-right:var(--safeRight)!important}
+.brand{font-size:18px!important}.brand .bolt{width:42px!important;height:42px!important;font-size:25px!important}
+.top-right{gap:9px!important}.install-btn{font-size:14px!important;padding:9px 13px!important}.chip{font-size:13px!important;padding:8px 10px!important}
+.zeus-avatar{width:46px!important;height:46px!important;min-width:46px!important;background:url('./zeus.svg') center bottom/contain no-repeat!important;background-color:#07192f!important}
+.view-title h2{font-size:24px!important}.view-title small{font-size:14px!important;line-height:1.25!important}
+.home-grid{grid-template-rows:244px 86px 1fr!important;gap:7px!important}
+.hero{padding:14px 47% 12px 14px!important;background-image:linear-gradient(90deg,rgba(3,18,36,.99) 0%,rgba(3,18,36,.96) 47%,rgba(3,18,36,.48) 68%,rgba(3,18,36,.05) 100%),url('./zeus.svg')!important;background-repeat:no-repeat!important;background-size:auto,53% auto!important;background-position:0 0,106% bottom!important}
+.hero-copy small{font-size:13px!important}.hero-copy h1{font-size:28px!important}.level{font-size:12px!important}
+.countdown div b{font-size:22px!important}.countdown div small{font-size:10px!important}.xp-row span,.xp-row b{font-size:11px!important}
+.coach-banner{grid-template-columns:62px 1fr 24px!important;background-image:linear-gradient(90deg,rgba(5,22,43,.99),rgba(5,22,43,.94) 69%,rgba(5,22,43,.25)),url('./zeus.svg')!important;background-size:auto,31% auto!important;background-position:0 0,102% bottom!important}
+.coach-banner .zeus-face,.note-modal .zeus-face{width:60px!important;height:60px!important;background:url('./zeus.svg') center bottom/contain no-repeat!important;background-color:#07192f!important}
+.coach-banner b{font-size:17px!important}.coach-banner small{font-size:13px!important}.coach-banner em{font-size:28px!important}
+.quick-grid button{padding:8px 9px!important}.quick-grid button i{font-size:28px!important}.quick-grid button b{font-size:15px!important}.quick-grid button small{font-size:11.5px!important;line-height:1.22!important}
+.lesson-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(5,minmax(0,1fr))!important;gap:6px!important}
+.lesson-card{padding:5px 5px!important;border-radius:14px!important}.lesson-card i{font-size:27px!important;margin-bottom:2px!important}.lesson-card b{font-size:17px!important;line-height:1.08!important}.lesson-card small{font-size:12.5px!important;line-height:1.12!important;margin-top:3px!important}.note-badge{font-size:10.5px!important;padding:4px 6px!important}
+.zeus-grid{grid-template-rows:118px 1fr 148px!important;gap:7px!important}
+.zeus-hero{grid-template-columns:94px 1fr!important;min-height:0!important;padding:7px!important;background-image:linear-gradient(90deg,rgba(6,25,48,.99),rgba(6,25,48,.94) 73%,rgba(6,25,48,.24)),url('./zeus.svg')!important;background-size:auto,28% auto!important;background-position:0 0,103% bottom!important}
+.zeus-big{width:92px!important;height:102px!important;background:url('./zeus.svg') center bottom/contain no-repeat!important;background-color:#07192f!important}.zeus-hero h3{font-size:16px!important}.zeus-hero p{font-size:14px!important;line-height:1.32!important}.mini-pills span{font-size:11px!important}
+.tasks{padding:6px!important;gap:4px!important}.tasks h4{font-size:13px!important}.tasks button{grid-template-columns:40px 1fr auto!important;padding:4px 6px!important;min-height:48px!important}.tasks button i{width:38px!important;height:38px!important;font-size:23px!important}.tasks button b{font-size:15px!important}.tasks button small{font-size:12px!important}.tasks button em{font-size:11px!important}
+.tool-grid{gap:6px!important}.tool-grid button{padding:7px!important}.tool-grid button b{font-size:15px!important}.tool-grid button small{font-size:12px!important}
+.exam-card span b{font-size:16px!important}.exam-card span small{font-size:12px!important}.exam-card>button{font-size:13px!important}.exam-bottom div>small{font-size:11px!important}.exam-bottom button{font-size:13px!important}
+.tabs button{font-size:12px!important}.rank-card small{font-size:11.5px!important}.rank-card>b{font-size:31px!important}.rank-card span{font-size:11.5px!important}.leaderboard>div b,.leaderboard>div span,.leaderboard>div em{font-size:12px!important}.demo-note{font-size:11.5px!important}
+.question-card h3{font-size:18px!important}.option{font-size:15px!important;min-height:48px!important}.question-actions button{font-size:12.5px!important}.note-modal header h3{font-size:17px!important}.note-modal>h4{font-size:16px!important}.note-grid article p{font-size:13px!important}.open-paper p{font-size:15px!important}.open-paper textarea{font-size:16px!important;min-height:180px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media (prefers-contrast:more){.card,.lesson-card,.exam-card,.rank-card{border-width:2px!important}.view-title small{color:#d4e4f2!important}}
+@media (display-mode:standalone){.install-btn{display:none!important}}
+@media (max-width:380px){:root{--top:66px;--nav:74px}.brand{font-size:16px!important}.brand .bolt{width:38px!important;height:38px!important}.hero-copy h1{font-size:25px!important}.lesson-card b{font-size:15.5px!important}.lesson-card small{font-size:11.5px!important}.tasks button b{font-size:14px!important}.tasks button small{font-size:11px!important}}
+@media (max-height:700px){:root{--top:62px;--nav:70px}.home-grid{grid-template-rows:220px 74px 1fr!important}.hero-copy h1{font-size:24px!important}.zeus-grid{grid-template-rows:108px 1fr 132px!important}.zeus-big{height:92px!important}.tool-grid button b{font-size:14px!important}.tool-grid button small{font-size:11px!important}}
