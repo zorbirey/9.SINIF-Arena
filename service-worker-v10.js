@@ -1,0 +1,6 @@
+const CACHE_NAME='arena9-v10-lgs-verified-zeus';
+const APP_SHELL=['./arena-v10.html','./style.css','./mobile.css','./arena-v10.css','./app.js','./pwa-v10.js','./manifest-v10.webmanifest','./icon-v8.svg','./assets/zeus-real-v10.webp'];
+self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',event=>{const request=event.request;if(request.method!=='GET')return;if(request.mode==='navigate'){event.respondWith(fetch(request).then(response=>{const copy=response.clone();caches.open(CACHE_NAME).then(cache=>cache.put('./arena-v10.html',copy));return response}).catch(()=>caches.match('./arena-v10.html')));return}event.respondWith(caches.match(request).then(cached=>cached||fetch(request).then(response=>{if(!response||response.status!==200||response.type==='opaque')return response;const copy=response.clone();caches.open(CACHE_NAME).then(cache=>cache.put(request,copy));return response})))});
+self.addEventListener('message',event=>{if(event.data==='SKIP_WAITING')self.skipWaiting()});
