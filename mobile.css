@@ -1,0 +1,11 @@
+:root{--safeTop:env(safe-area-inset-top,0px);--safeBottom:env(safe-area-inset-bottom,0px)}
+html,body{overscroll-behavior:none;touch-action:manipulation;background:#010712}
+#app{height:100dvh;min-height:100dvh;max-width:480px}
+.topbar{height:calc(var(--top) + var(--safeTop));padding-top:var(--safeTop)}
+.view{top:calc(var(--top) + var(--safeTop));bottom:calc(var(--nav) + var(--safeBottom))}
+.bottom-nav{height:calc(var(--nav) + var(--safeBottom));padding-bottom:var(--safeBottom)}
+.install-btn{border:1px solid #735d21;background:linear-gradient(135deg,#7d5c16,#e8bd4b);color:#09111e;border-radius:999px;padding:5px 8px;font-size:8px;font-weight:950;white-space:nowrap}
+@media(display-mode:standalone){.install-btn{display:none!important}}
+@media(max-width:430px){#app{max-width:none}.brand{font-size:13px}.chip{font-size:8px}.quick-grid button b{font-size:9px}.quick-grid button small{font-size:7.5px}.lesson-card b{font-size:8.5px}.lesson-card small{font-size:7px}}
+@media(max-width:360px){:root{--top:48px;--nav:57px}.view{padding:6px}.view-title{min-height:24px;margin-bottom:4px}.view-title h2{font-size:14px}.quick-grid button{padding:5px}.countdown div b{font-size:15px}}
+@media(max-height:680px){:root{--top:47px;--nav:55px}.view{padding:5px}.home-grid{gap:5px}.hero{padding:7px}.quick-grid button{padding:5px}.lesson-card i{font-size:18px}.tasks button{padding:3px 5px}.tool-grid button{padding:5px}.zeus-hero{padding:6px}}
