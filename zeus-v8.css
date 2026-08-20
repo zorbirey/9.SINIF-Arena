@@ -1,81 +1,26 @@
-/* 9. Sınıf Arena v8 — embedded Zeus / Android 16 PWA */
-:root{--zeus-v8:url('./zeus-v8.webp');--safeTop:env(safe-area-inset-top,0px);--safeBottom:env(safe-area-inset-bottom,0px)}
+/* Arena Zeus v9 — Android-safe SVG asset */
+:root{--zeus-v8:url('./zeus-v9.svg');--safeTop:env(safe-area-inset-top,0px);--safeBottom:env(safe-area-inset-bottom,0px)}
 html,body{overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:#010712!important}
 body.gate-locked .topbar,body.gate-locked .view,body.gate-locked .bottom-nav{visibility:hidden!important;pointer-events:none!important}
 #app{height:100dvh;min-height:100svh;max-width:520px!important;background:radial-gradient(circle at 92% 2%,rgba(33,112,194,.30),transparent 31%),linear-gradient(180deg,#031327,#020817 78%)!important}
 .topbar{padding-top:var(--safeTop)!important;height:calc(66px + var(--safeTop))!important}
-.view{top:calc(66px + var(--safeTop))!important;bottom:calc(78px + var(--safeBottom))!important;padding:10px!important;overflow:auto!important;scrollbar-width:none!important}
-.view::-webkit-scrollbar{display:none}
-.bottom-nav{height:calc(78px + var(--safeBottom))!important;padding-bottom:var(--safeBottom)!important}
-button{min-height:48px}
+.view{top:calc(66px + var(--safeTop))!important;bottom:calc(78px + var(--safeBottom))!important;padding:10px!important;overflow:auto!important;scrollbar-width:none!important}.view::-webkit-scrollbar{display:none}
+.bottom-nav{height:calc(78px + var(--safeBottom))!important;padding-bottom:var(--safeBottom)!important}button{min-height:48px}
 .install-btn{border:1px solid #8e7024;background:linear-gradient(135deg,#8d6718,#f1c34d);color:#09111e;border-radius:999px;padding:9px 12px;font-size:13px;font-weight:950;white-space:nowrap}
-.zeus-avatar,.zeus-face,.zeus-big{background-image:var(--zeus-v8)!important;background-size:contain!important;background-position:center center!important;background-repeat:no-repeat!important;background-color:#08192d!important;border:2px solid #d7aa48!important;box-shadow:0 0 0 2px #0b2745,0 0 18px rgba(65,173,255,.38)!important}
-.zeus-avatar{width:44px!important;height:44px!important;min-width:44px!important;border-radius:50%!important}
-.splash-gate{position:absolute;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;padding:calc(14px + var(--safeTop)) 16px calc(18px + var(--safeBottom));background:radial-gradient(circle at 50% 9%,rgba(47,126,214,.36),transparent 33%),linear-gradient(180deg,#020c1a 0%,#03172c 48%,#020817 100%);transition:opacity .22s ease,transform .22s ease}
-.splash-gate.leaving{opacity:0;transform:scale(1.015);pointer-events:none}
-.splash-shell{width:100%;max-width:430px;height:100%;max-height:860px;min-height:640px;display:grid;grid-template-rows:auto 1fr auto;align-items:center;text-align:center;position:relative;overflow:hidden;border:1px solid rgba(73,157,222,.32);border-radius:28px;background:linear-gradient(180deg,rgba(7,29,54,.94),rgba(2,11,24,.96));box-shadow:0 20px 65px rgba(0,0,0,.52),inset 0 0 40px rgba(55,160,241,.06)}
-.splash-shell::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.34));pointer-events:none}
-.splash-head{position:relative;z-index:2;padding:22px 18px 0}
-.splash-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #265e8b;border-radius:999px;background:#071d36;color:#a9e8ff;font-size:12px;font-weight:950;letter-spacing:1.15px}
-.splash-kicker i{font-style:normal;color:#ffd45d;font-size:17px}
-.splash-art{position:relative;z-index:1;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:0;background:var(--zeus-v8) center bottom/contain no-repeat;margin:6px 22px 0}
-.splash-art::after{content:"";position:absolute;left:8%;right:8%;bottom:2%;height:17%;background:radial-gradient(ellipse,rgba(72,177,255,.20),transparent 66%);filter:blur(12px)}
-.splash-bottom{position:relative;z-index:3;padding:0 22px 24px;margin-top:-8px}
-.splash-title{margin:0;color:#fff;font-size:38px;line-height:.94;font-weight:1000;letter-spacing:.15px;text-shadow:0 3px 14px rgba(0,0,0,.5)}
-.splash-title span{display:block;color:#83dcff}
-.splash-sub{max-width:330px;margin:12px auto 16px;color:#d7e8f5;font-size:14px;line-height:1.42}
-.enter-arena{width:100%;max-width:310px;border:0;border-radius:18px;padding:16px 18px;background:linear-gradient(135deg,#a9791e,#f0c34f 58%,#ffd66a);color:#07111e;font-size:19px;font-weight:1000;letter-spacing:.35px;box-shadow:0 12px 30px rgba(240,195,79,.24)}
-.enter-hint{display:block;margin-top:9px;color:#91abc2;font-size:11px}
-.watermark-layer{position:absolute!important;inset:0!important;pointer-events:none!important;z-index:0!important;background-image:var(--zeus-v8)!important;background-repeat:no-repeat!important;background-position:center 61%!important;background-size:min(70vw,320px) auto!important;opacity:.075!important;filter:saturate(.9) contrast(1.05)}
-.view>*:not(.watermark-layer){position:relative;z-index:1}
-.overlay{position:fixed!important}
-.overlay .watermark-layer{opacity:.07!important;background-position:center!important;background-size:min(68vw,300px) auto!important}
-.overlay>*:not(.watermark-layer){position:relative;z-index:1}
+.zeus-avatar,.zeus-face,.zeus-big{background-image:var(--zeus-v8)!important;background-size:contain!important;background-position:center center!important;background-repeat:no-repeat!important;background-color:#08192d!important;border:2px solid #d7aa48!important;box-shadow:0 0 0 2px #0b2745,0 0 18px rgba(65,173,255,.38)!important}.zeus-avatar{width:44px!important;height:44px!important;min-width:44px!important;border-radius:50%!important}
+.splash-gate{position:absolute;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;padding:calc(14px + var(--safeTop)) 16px calc(18px + var(--safeBottom));background:radial-gradient(circle at 50% 9%,rgba(47,126,214,.36),transparent 33%),linear-gradient(180deg,#020c1a 0%,#03172c 48%,#020817 100%);transition:opacity .22s ease,transform .22s ease}.splash-gate.leaving{opacity:0;transform:scale(1.015);pointer-events:none}
+.splash-shell{width:100%;max-width:430px;height:100%;max-height:860px;min-height:620px;display:grid;grid-template-rows:auto 1fr auto;align-items:center;text-align:center;position:relative;overflow:hidden;border:1px solid rgba(73,157,222,.32);border-radius:28px;background:linear-gradient(180deg,rgba(7,29,54,.94),rgba(2,11,24,.96));box-shadow:0 20px 65px rgba(0,0,0,.52),inset 0 0 40px rgba(55,160,241,.06)}
+.splash-head{position:relative;z-index:2;padding:22px 18px 0}.splash-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #265e8b;border-radius:999px;background:#071d36;color:#a9e8ff;font-size:12px;font-weight:950;letter-spacing:1.15px}.splash-kicker i{font-style:normal;color:#ffd45d;font-size:17px}
+.splash-art{position:relative;z-index:1;align-self:stretch;min-height:0;background:var(--zeus-v8) center bottom/contain no-repeat;margin:4px 18px 0;filter:drop-shadow(0 12px 22px rgba(0,0,0,.35))}
+.splash-bottom{position:relative;z-index:3;padding:0 22px 24px;margin-top:-2px}.splash-title{margin:0;color:#fff;font-size:38px;line-height:.94;font-weight:1000;letter-spacing:.15px;text-shadow:0 3px 14px rgba(0,0,0,.5)}.splash-title span{display:block;color:#83dcff}.splash-sub{max-width:330px;margin:12px auto 16px;color:#d7e8f5;font-size:14px;line-height:1.42}.enter-arena{width:100%;max-width:310px;border:0;border-radius:18px;padding:16px 18px;background:linear-gradient(135deg,#a9791e,#f0c34f 58%,#ffd66a);color:#07111e;font-size:19px;font-weight:1000;letter-spacing:.35px;box-shadow:0 12px 30px rgba(240,195,79,.24)}.enter-hint{display:block;margin-top:9px;color:#91abc2;font-size:11px}
+.watermark-layer{position:absolute!important;inset:0!important;pointer-events:none!important;z-index:0!important;background-image:var(--zeus-v8)!important;background-repeat:no-repeat!important;background-position:center 61%!important;background-size:min(70vw,320px) auto!important;opacity:.075!important;filter:saturate(.9) contrast(1.05)}.view>*:not(.watermark-layer){position:relative;z-index:1}.overlay{position:fixed!important}.overlay .watermark-layer{opacity:.07!important;background-position:center!important;background-size:min(68vw,300px) auto!important}.overlay>*:not(.watermark-layer){position:relative;z-index:1}
 .hero{position:relative!important;overflow:hidden!important;min-height:250px!important;padding:14px 43% 14px 14px!important;background:linear-gradient(90deg,rgba(3,18,36,.99) 0%,rgba(3,18,36,.96) 45%,rgba(3,18,36,.62) 68%,rgba(3,18,36,.10) 100%),var(--zeus-v8)!important;background-size:auto,49% auto!important;background-repeat:no-repeat!important;background-position:0 0,right 7px bottom 9px!important;border:1px solid #3574a5!important}
-.hero-copy small{display:block!important;font-size:13px!important;color:#f1c65b!important;font-weight:950!important;letter-spacing:1.3px!important;margin-bottom:5px!important}
-.hero-copy h1{font-size:24px!important;line-height:1.01!important;margin:0!important;max-width:100%!important}
-.level{position:static!important;display:inline-flex!important;width:max-content!important;margin-top:9px!important;padding:7px 10px!important;border-radius:999px!important;background:#211c10d8!important;border:1px solid #8f6e26!important;color:#ffd86d!important;font-size:13px!important}
-.countdown{max-width:64%!important;margin-top:11px!important;gap:6px!important}
-.countdown div{padding:8px 4px!important}
-.countdown div b{font-size:20px!important}
-.countdown div small{font-size:9.5px!important}
-.xp-row{max-width:64%!important;margin-top:9px!important;font-size:11px!important}
-.inspired{font-size:10px!important;right:13px!important;bottom:9px!important}
-.hero::after{content:"9. SINIF\A ARENA";white-space:pre;position:absolute;right:13px;bottom:26px;color:#f7fbff;font-size:16px;line-height:1.0;text-align:right;font-weight:1000;letter-spacing:.5px;text-shadow:0 2px 8px #000}
-.coach-banner{grid-template-columns:66px 1fr 22px!important;gap:11px!important;min-height:92px!important;padding:10px 12px!important;background:linear-gradient(90deg,rgba(5,22,43,.99),rgba(5,22,43,.92) 66%,rgba(5,22,43,.25)),var(--zeus-v8)!important;background-size:auto,26% auto!important;background-repeat:no-repeat!important;background-position:0 0,right -2px bottom 2px!important}
-.coach-banner .zeus-face,.note-modal .zeus-face{width:64px!important;height:64px!important;border-radius:18px!important}
-.coach-banner b{font-size:17px!important;color:#f0c34f!important}
-.coach-banner small{font-size:12.5px!important;line-height:1.3!important;margin-top:4px!important}
-.quick-grid{grid-template-columns:repeat(2,1fr)!important;grid-template-rows:none!important;gap:8px!important}
-.quick-grid button{min-height:94px!important;padding:10px!important}
-.quick-grid button i{font-size:27px!important}
-.quick-grid button b{font-size:16px!important}
-.quick-grid button small{font-size:12px!important;line-height:1.25!important}
-.view-title h2{font-size:24px!important}
-.view-title small{font-size:13px!important}
-.lesson-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;grid-auto-rows:116px!important;gap:9px!important;align-content:start!important;padding-bottom:10px!important}
-.lesson-card,.lesson{min-height:116px!important;padding:9px 7px!important;border-radius:17px!important}
-.lesson-card i,.lesson i{font-size:27px!important;margin-bottom:5px!important}
-.lesson-card b,.lesson b{font-size:17px!important;line-height:1.12!important}
-.lesson-card small,.lesson small{font-size:12.5px!important;line-height:1.24!important;margin-top:5px!important}
-.note-badge{font-size:10px!important;padding:5px 6px!important}
-.zeus-grid{grid-template-rows:auto auto auto!important;gap:9px!important}
-.zeus-hero{grid-template-columns:96px 1fr!important;gap:12px!important;min-height:142px!important;padding:11px!important;background:linear-gradient(90deg,rgba(6,25,48,.98),rgba(6,25,48,.92) 68%,rgba(6,25,48,.28)),var(--zeus-v8)!important;background-size:auto,25% auto!important;background-repeat:no-repeat!important;background-position:0 0,right 4px bottom 4px!important}
-.zeus-big{width:94px!important;height:116px!important;border-radius:18px!important}
-.zeus-hero h3{font-size:17px!important;color:#f0c34f!important;margin:0 0 5px!important}
-.zeus-hero p{font-size:14px!important;line-height:1.35!important;margin:0 0 7px!important}
-.mini-pills span{font-size:12px!important;padding:6px 8px!important}
-.tasks{padding:9px!important}
-.tasks h4{font-size:13px!important}
-.tasks button{min-height:68px!important;padding:7px 8px!important;grid-template-columns:42px 1fr auto!important}
-.tasks button i{font-size:23px!important;width:40px!important;height:40px!important}
-.tasks button b{font-size:15px!important}
-.tasks button small{font-size:11.5px!important}
-.tasks button em{font-size:11px!important}
-.tool-grid button b{font-size:14px!important}
-.tool-grid button small{font-size:11.5px!important}
-.exam-card span b{font-size:15px!important}.exam-card span small{font-size:11.5px!important;line-height:1.25!important}.exam-card>button{font-size:12px!important}
-.tabs button{font-size:12px!important}.rank-card small{font-size:11px!important}.rank-card span{font-size:11px!important}.leaderboard>div span,.leaderboard>div em{font-size:11px!important}.demo-note{font-size:11.5px!important}
-.question-card h3{font-size:17px!important;line-height:1.35!important}.option{font-size:14px!important;line-height:1.3!important}.note-grid article p{font-size:12.5px!important;line-height:1.32!important}
-@media(max-width:380px){.splash-shell{min-height:600px}.splash-title{font-size:33px}.hero{padding-right:41%!important;background-size:auto,47% auto!important}.hero-copy h1{font-size:22px!important}.lesson-card b,.lesson b{font-size:16px!important}.lesson-card small,.lesson small{font-size:12px!important}}
-@media(display-mode:standalone){.install-btn{display:none!important}}
+.hero-copy small{display:block!important;font-size:13px!important;color:#f1c65b!important;font-weight:950!important;letter-spacing:1.3px!important;margin-bottom:5px!important}.hero-copy h1{font-size:24px!important;line-height:1.01!important;margin:0!important;max-width:100%!important}.level{position:static!important;display:inline-flex!important;width:max-content!important;margin-top:9px!important;padding:7px 10px!important;border-radius:999px!important;background:#211c10d8!important;border:1px solid #8f6e26!important;color:#ffd86d!important;font-size:13px!important}
+.countdown{max-width:64%!important;margin-top:11px!important;gap:6px!important}.countdown div{padding:8px 4px!important}.countdown div b{font-size:20px!important}.countdown div small{font-size:9.5px!important}.xp-row{max-width:64%!important;margin-top:9px!important;font-size:11px!important}.inspired{font-size:10px!important;right:13px!important;bottom:9px!important}.hero::after{content:"9. SINIF\A ARENA";white-space:pre;position:absolute;right:13px;bottom:26px;color:#f7fbff;font-size:16px;line-height:1;text-align:right;font-weight:1000;letter-spacing:.5px;text-shadow:0 2px 8px #000}
+.coach-banner{grid-template-columns:66px 1fr 22px!important;gap:11px!important;min-height:92px!important;padding:10px 12px!important;background:linear-gradient(90deg,rgba(5,22,43,.99),rgba(5,22,43,.92) 66%,rgba(5,22,43,.25)),var(--zeus-v8)!important;background-size:auto,26% auto!important;background-repeat:no-repeat!important;background-position:0 0,right -2px bottom 2px!important}.coach-banner .zeus-face,.note-modal .zeus-face{width:64px!important;height:64px!important;border-radius:18px!important}.coach-banner b{font-size:17px!important;color:#f0c34f!important}.coach-banner small{font-size:12.5px!important;line-height:1.3!important;margin-top:4px!important}
+.quick-grid{grid-template-columns:repeat(2,1fr)!important;grid-template-rows:none!important;gap:8px!important}.quick-grid button{min-height:94px!important;padding:10px!important}.quick-grid button i{font-size:27px!important}.quick-grid button b{font-size:16px!important}.quick-grid button small{font-size:12px!important;line-height:1.25!important}.view-title h2{font-size:24px!important}.view-title small{font-size:13px!important}
+.lesson-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;grid-auto-rows:minmax(112px,auto)!important;gap:9px!important;align-content:start!important;padding-bottom:10px!important}.lesson{min-height:112px!important;padding:10px 8px!important;border-radius:17px!important;position:relative!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important}.lesson i{font-size:28px!important;margin-bottom:7px!important}.lesson b{font-size:18px!important;line-height:1.12!important}.lesson small{font-size:13px!important;line-height:1.25!important;margin-top:5px!important;color:#dceaf5!important}.note-badge{font-size:10.5px!important;padding:5px 7px!important;top:7px!important;right:7px!important}
+.zeus-grid{grid-template-rows:auto auto auto!important;gap:9px!important}.zeus-hero{grid-template-columns:96px 1fr!important;gap:12px!important;min-height:142px!important;padding:11px!important;background:linear-gradient(90deg,rgba(6,25,48,.98),rgba(6,25,48,.92) 68%,rgba(6,25,48,.28)),var(--zeus-v8)!important;background-size:auto,25% auto!important;background-repeat:no-repeat!important;background-position:0 0,right 4px bottom 4px!important}.zeus-big{width:94px!important;height:116px!important;border-radius:18px!important}.zeus-hero h3{font-size:17px!important;color:#f0c34f!important;margin:0 0 5px!important}.zeus-hero p{font-size:14px!important;line-height:1.35!important;margin:0 0 7px!important}.mini-pills span{font-size:12px!important;padding:6px 8px!important}
+.tasks{padding:9px!important}.tasks h4{font-size:13px!important}.tasks button{min-height:68px!important;padding:7px 8px!important;grid-template-columns:42px 1fr auto!important}.tasks button i{font-size:23px!important;width:40px!important;height:40px!important}.tasks button b{font-size:15px!important}.tasks button small{font-size:11.5px!important}.tasks button em{font-size:11px!important}.tool-grid button b{font-size:14px!important}.tool-grid button small{font-size:11.5px!important}
+.exam-card span b{font-size:15px!important}.exam-card span small{font-size:11.5px!important;line-height:1.25!important}.exam-card>button{font-size:12px!important}.tabs button{font-size:12px!important}.rank-card small{font-size:11px!important}.rank-card span{font-size:11px!important}.leaderboard>div span,.leaderboard>div em{font-size:11px!important}.demo-note{font-size:11.5px!important}.question-card h3{font-size:17px!important;line-height:1.35!important}.option{font-size:14px!important;line-height:1.3!important}.note-grid article p{font-size:12.5px!important;line-height:1.32!important}
+@media(max-width:380px){.splash-shell{min-height:590px}.splash-title{font-size:33px}.hero{padding-right:41%!important;background-size:auto,47% auto!important}.hero-copy h1{font-size:22px!important}.lesson b{font-size:17px!important}.lesson small{font-size:12.5px!important}}@media(display-mode:standalone){.install-btn{display:none!important}}
