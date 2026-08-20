@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Zeus portrait">
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="34%" r="54%">
+      <stop offset="0" stop-color="#61c9ff" stop-opacity=".36"/>
+      <stop offset=".52" stop-color="#1a65b7" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#031023" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6d69a"/>
+      <stop offset="1" stop-color="#c98f4f"/>
+    </linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".55" stop-color="#d7ebff"/>
+      <stop offset="1" stop-color="#8db5d8"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0a1"/>
+      <stop offset=".5" stop-color="#f1c24e"/>
+      <stop offset="1" stop-color="#b87916"/>
+    </linearGradient>
+    <filter id="blueGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="eyeGlow" x="-250%" y="-250%" width="600%" height="600%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <ellipse cx="400" cy="430" rx="360" ry="410" fill="url(#halo)"/>
+  <g opacity=".78" filter="url(#blueGlow)">
+    <path d="M650 78 554 282h89L515 500l37-151h-87z" fill="#7dd8ff"/>
+    <path d="M150 220 91 343h55L70 474l21-88H38z" fill="#2d9dff" opacity=".72"/>
+  </g>
+  <path d="M196 786c45-141 132-222 204-222s159 81 204 222l64 196H132z" fill="#102c50"/>
+  <path d="M196 786c80-70 142-100 204-100s124 30 204 100l38 116H158z" fill="#173b67"/>
+  <path d="M282 252c26-100 83-164 118-164 43 0 101 64 126 164-16-12-34-16-52-12-31-36-110-36-145 0-18-4-33 0-47 12z" fill="url(#hair)"/>
+  <path d="M256 328c0-127 64-218 144-218s144 91 144 218c0 122-56 216-144 216s-144-94-144-216z" fill="url(#skin)"/>
+  <path d="M278 294c32-41 70-55 120-55 49 0 92 14 125 55-13-66-59-127-123-127-66 0-109 60-122 127z" fill="url(#hair)"/>
+  <path d="M269 308c-18-62-4-131 42-169-58 22-87 95-74 166z" fill="url(#hair)"/>
+  <path d="M531 308c18-62 4-131-42-169 58 22 87 95 74 166z" fill="url(#hair)"/>
+  <path d="M304 313c17-14 39-20 62-15" stroke="#865d31" stroke-width="15" stroke-linecap="round" fill="none"/>
+  <path d="M434 298c23-5 45 1 62 15" stroke="#865d31" stroke-width="15" stroke-linecap="round" fill="none"/>
+  <ellipse cx="342" cy="343" rx="31" ry="20" fill="#e9f8ff"/>
+  <ellipse cx="458" cy="343" rx="31" ry="20" fill="#e9f8ff"/>
+  <circle cx="342" cy="343" r="9" fill="#64d8ff" filter="url(#eyeGlow)"/>
+  <circle cx="458" cy="343" r="9" fill="#64d8ff" filter="url(#eyeGlow)"/>
+  <circle cx="342" cy="343" r="4" fill="#0b1b31"/>
+  <circle cx="458" cy="343" r="4" fill="#0b1b31"/>
+  <path d="M389 334c-7 35-11 66-4 88 9 12 20 12 31 2" stroke="#a76f3d" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M349 452c30 22 72 22 102 0" stroke="#7e4b2a" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M305 443c-8 117 33 219 95 219 63 0 102-102 95-219-23 42-54 66-95 66-40 0-73-24-95-66z" fill="url(#hair)"/>
+  <path d="M314 454c22 34 51 54 86 54 36 0 65-20 86-54" stroke="#f8fdff" stroke-width="16" stroke-linecap="round" fill="none" opacity=".8"/>
+  <path d="M274 467c-30 82-9 160 46 193" stroke="url(#hair)" stroke-width="34" stroke-linecap="round" fill="none"/>
+  <path d="M526 467c30 82 9 160-46 193" stroke="url(#hair)" stroke-width="34" stroke-linecap="round" fill="none"/>
+  <path d="M251 740c41 24 89 39 149 39s108-15 149-39" stroke="url(#gold)" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <path d="M217 820h366" stroke="#63cfff" stroke-width="5" opacity=".34"/>
+</svg>
