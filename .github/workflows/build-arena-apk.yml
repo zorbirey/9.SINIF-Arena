@@ -25,6 +25,21 @@ jobs:
           yes | sdkmanager --licenses >/dev/null || true
           sdkmanager "platforms;android-36" "build-tools;36.0.0"
 
+      - name: Giris ekranina Maarif Modeli bilgilendirmesi ekle
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('android-wrapper/app/src/main/java/com/zorbirey/sinifarena/MainActivity.java')
+          s=p.read_text(encoding='utf-8')
+          needle='        column.addView(tag, tagLp);\n'
+          block='''        column.addView(tag, tagLp);\n\n        TextView maarifInfo = new TextView(this);\n        maarifInfo.setText("İçerikler, Türkiye Yüzyılı Maarif Modeli’nin 9. sınıf öğrenme çıktıları dikkate alınarak hazırlanmıştır. Bu uygulama MEB’in resmî uygulaması değildir.");\n        maarifInfo.setTextColor(Color.rgb(174,195,216));\n        maarifInfo.setTextSize(10);\n        maarifInfo.setGravity(Gravity.CENTER);\n        maarifInfo.setPadding(dp(10), dp(8), dp(10), 0);\n        LinearLayout.LayoutParams maarifLp = new LinearLayout.LayoutParams(\n            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);\n        maarifLp.setMargins(dp(18), dp(2), dp(18), 0);\n        column.addView(maarifInfo, maarifLp);\n'''
+          if 'Türkiye Yüzyılı Maarif Modeli’nin 9. sınıf öğrenme çıktıları' not in s:
+              if needle not in s:
+                  raise SystemExit('Giris ekrani ekleme noktasi bulunamadi')
+              s=s.replace(needle,block,1)
+              p.write_text(s,encoding='utf-8')
+          PY
+
       - name: APK yerel arayuzunu ve Veli Panelini hazirla
         run: |
           set -e
@@ -44,6 +59,7 @@ jobs:
           file android-wrapper/app/src/main/assets/zeus.webp
           grep -q "9. Sınıf Arena Veli Paneli" android-wrapper/app/src/main/assets/index.html
           grep -q "student.html" android-wrapper/app/src/main/assets/index.html
+          grep -q "Süre dolup test sonlandı" android-wrapper/app/src/main/assets/index.html
 
       - name: Gradle 9.5 kur
         run: |
