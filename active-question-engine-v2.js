@@ -1,5 +1,11 @@
 (() => {
   'use strict';
+  if (!Array.isArray(window.VERIFIED_Q_V3_EXTRA)) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET','data/verified-question-bank-v3-extra60.js?v=200',false);
+    xhr.send(null);
+    if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 0) (0,eval)(xhr.responseText);
+  }
   const base = Array.isArray(window.VERIFIED_Q_V1) ? window.VERIFIED_Q_V1 : [];
   const extra = Array.isArray(window.VERIFIED_Q_V2_EXTRA) ? window.VERIFIED_Q_V2_EXTRA : [];
   const extra60 = Array.isArray(window.VERIFIED_Q_V3_EXTRA) ? window.VERIFIED_Q_V3_EXTRA : [];
