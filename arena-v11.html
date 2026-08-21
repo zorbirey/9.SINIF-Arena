@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#020817">
+<title>9. Sınıf Arena 2027 — V11</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#010712;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+#shell{position:fixed;inset:0;background:#010712}
+#appFrame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#010712}
+#cover{position:absolute;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at 50% 20%,rgba(31,108,180,.35),transparent 36%),linear-gradient(180deg,#06172b 0%,#020817 72%);color:#fff;text-align:center;transition:opacity .28s ease,visibility .28s ease}
+#cover.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.cover-inner{width:min(100%,460px);display:flex;flex-direction:column;align-items:center}
+.cover-zeus{width:min(78vw,320px);height:min(48vh,360px);object-fit:cover;object-position:50% 18%;border-radius:28px;filter:contrast(1.08) saturate(1.04);box-shadow:0 26px 80px #000a,0 0 42px rgba(69,177,255,.22);border:1px solid rgba(105,199,255,.35)}
+.cover-kicker{margin-top:18px;font-size:13px;font-weight:900;letter-spacing:2.5px;color:#81dcff}
+.cover-title{margin:6px 0 2px;font-size:clamp(34px,10vw,54px);font-weight:1000;line-height:.9;letter-spacing:-1.8px}
+.cover-sub{margin:7px 0 18px;font-size:12px;color:#b8cde0;letter-spacing:.7px}
+#enterArena{width:min(100%,320px);border:0;border-radius:16px;padding:15px 18px;background:linear-gradient(135deg,#1777d2,#3bb8ff);color:#fff;font-size:16px;font-weight:950;letter-spacing:.9px;box-shadow:0 12px 34px rgba(46,159,239,.34)}
+#enterArena:active{transform:scale(.985)}
+.version{margin-top:10px;font-size:10px;color:#6f8aa4}
+</style>
+</head>
+<body>
+<div id="shell">
+  <iframe id="appFrame" src="index.html?v=11" title="9. Sınıf Arena"></iframe>
+  <section id="cover" aria-label="9. Sınıf Arena giriş ekranı">
+    <div class="cover-inner">
+      <img class="cover-zeus" src="assets/zeus-real-v10.webp?v=11" alt="Zeus">
+      <div class="cover-kicker">9. SINIF</div>
+      <h1 class="cover-title">ARENA 2027</h1>
+      <p class="cover-sub">ÇALIŞ • ÖĞREN • GELİŞ • ZİRVEYE ÇIK</p>
+      <button id="enterArena" type="button">ARENAYA GİR</button>
+      <div class="version">Android 16 uyumlu V11</div>
+    </div>
+  </section>
+</div>
+<script>
+(() => {
+  const frame = document.getElementById('appFrame');
+  const cover = document.getElementById('cover');
+  const enter = document.getElementById('enterArena');
+  const ZEUS = 'assets/zeus-real-v10.webp?v=11';
+
+  function injectFixes(){
+    let doc;
+    try { doc = frame.contentDocument || frame.contentWindow.document; } catch(e) { return; }
+    if(!doc || !doc.head || !doc.body) return;
+
+    if(!doc.getElementById('v11FixStyle')){
+      const style = doc.createElement('style');
+      style.id = 'v11FixStyle';
+      style.textContent = `
+        .lesson-grid{gap:10px!important;padding-bottom:4px!important}
+        .lesson-grid .lesson,.lesson-grid button{min-height:112px!important;padding:12px 8px!important;border-radius:16px!important}
+        .lesson-grid .lesson b,.lesson-grid button b{font-size:13px!important;line-height:1.15!important;margin-top:6px!important}
+        .lesson-grid .lesson small,.lesson-grid button small{font-size:10px!important;line-height:1.2!important;margin-top:5px!important}
+        .lesson-grid .lesson i,.lesson-grid button i{font-size:28px!important}
+        .quick-grid button b{font-size:11px!important}.quick-grid button small{font-size:8.5px!important}
+        .view-title h2{font-size:19px!important}.view-title small{font-size:11px!important}
+        .hero-copy h1{font-size:25px!important}.hero-copy small{font-size:11px!important}
+        .countdown b{font-size:22px!important}.countdown small{font-size:8px!important}
+        #v11Watermark{position:fixed;left:50%;top:54%;transform:translate(-50%,-50%);width:min(78vw,340px);max-height:62vh;object-fit:contain;opacity:.115;filter:grayscale(.15) contrast(1.1);pointer-events:none;z-index:2}
+        .view,.topbar,.bottom-nav,.overlay{position:relative;z-index:3}
+        .topbar,.bottom-nav{z-index:20}.overlay{z-index:100}
+        .zeus-avatar,.zeus-face,.zeus-big{background-image:url('${ZEUS}')!important;background-size:cover!important;background-position:50% 18%!important;background-repeat:no-repeat!important;color:transparent!important}
+        .zeus-big{display:block!important;min-width:92px!important;min-height:116px!important;border-radius:18px!important}
+        @media(max-width:380px){.lesson-grid .lesson,.lesson-grid button{min-height:100px!important}.lesson-grid .lesson b,.lesson-grid button b{font-size:12px!important}.lesson-grid .lesson small,.lesson-grid button small{font-size:9px!important}}
+      `;
+      doc.head.appendChild(style);
+    }
+
+    if(!doc.getElementById('v11Watermark')){
+      const img = doc.createElement('img');
+      img.id='v11Watermark';
+      img.alt='';
+      img.setAttribute('aria-hidden','true');
+      img.src=ZEUS;
+      doc.body.appendChild(img);
+    }
+
+    doc.querySelectorAll('.zeus-avatar,.zeus-face,.zeus-big').forEach(el => {
+      el.style.backgroundImage = `url("${ZEUS}")`;
+    });
+  }
+
+  frame.addEventListener('load', () => {
+    injectFixes();
+    setTimeout(injectFixes,250);
+    setTimeout(injectFixes,900);
+  });
+
+  enter.addEventListener('click', () => {
+    cover.classList.add('hidden');
+    injectFixes();
+  });
+
+  window.addEventListener('pageshow', () => {
+    cover.classList.remove('hidden');
+  });
+})();
+</script>
+</body>
+</html>
