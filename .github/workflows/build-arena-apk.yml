@@ -19,28 +19,42 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
+
       - name: Android 16 SDK kur
         run: |
           yes | sdkmanager --licenses >/dev/null || true
           sdkmanager "platforms;android-36" "build-tools;36.0.0"
-      - name: Zeus ve ikonlari APK icine gom
+
+      - name: APK yerel arayuzunu ve Veli Panelini hazirla
         run: |
           set -e
           mkdir -p android-wrapper/app/src/main/res/drawable-nodpi
           mkdir -p android-wrapper/app/src/main/assets
+
+          # Mevcut ogrenci arayuzunu koru; parent-shell ana APK ekrani olur.
+          cp android-wrapper/app/src/main/assets/index.html android-wrapper/app/src/main/assets/student.html
+          cp android-wrapper/app/src/main/assets/parent-shell.html android-wrapper/app/src/main/assets/index.html
+
+          # Zeus dosyalari APK icine gomulur.
           cp assets/zeus-real-v10.webp android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
           cp assets/zeus-real-v10.webp android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
           cp assets/zeus-real-v10.webp android-wrapper/app/src/main/assets/zeus.webp
+
           file android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
           file android-wrapper/app/src/main/assets/zeus.webp
+          grep -q "9. Sınıf Arena Veli Paneli" android-wrapper/app/src/main/assets/index.html
+          grep -q "student.html" android-wrapper/app/src/main/assets/index.html
+
       - name: Gradle 9.5 kur
         run: |
           wget -q https://services.gradle.org/distributions/gradle-9.5.0-bin.zip
           unzip -q gradle-9.5.0-bin.zip
           echo "$PWD/gradle-9.5.0/bin" >> $GITHUB_PATH
+
       - name: Android 16 APK olustur
         working-directory: android-wrapper
         run: gradle --no-daemon assembleDebug
+
       - uses: actions/upload-artifact@v4
         with:
           name: 9-Sinif-Arena-Android16-APK
