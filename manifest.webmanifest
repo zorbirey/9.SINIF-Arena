@@ -1,9 +1,9 @@
 {
-  "id": "./",
+  "id": "./pwa-latest.html",
   "name": "9. Sınıf Arena 2027",
   "short_name": "9.Sınıf Arena",
-  "description": "Zeus Koçluğu, soru çözme, açık uçlu ortak sınavlar, Akıllı Notlar ve Arena sıralaması.",
-  "start_url": "./android16.html?v=5",
+  "description": "Zeus Koçluğu, soru çözme, ortak sınavlar, Akıllı Notlar ve 13.200 aktif soruluk Arena.",
+  "start_url": "./pwa-latest.html?v=13200",
   "scope": "./",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui"],
