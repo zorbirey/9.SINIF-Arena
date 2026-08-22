@@ -1,0 +1,16 @@
+{
+  "batch": "V23-BATCH01",
+  "count": 1000,
+  "target": 8000,
+  "status": "pending-semantic-diversity-review",
+  "active": false,
+  "reason": "Structural QA passes, but repeated verbal question stems and low-diversity families must be rewritten before this batch can count toward the 20,000 verified-question claim.",
+  "requirements": {
+    "optionsPerQuestion": 5,
+    "singleCorrectAnswer": true,
+    "explanationRequired": true,
+    "uniqueIdRequired": true,
+    "curriculumSource": "MEB Türkiye Yüzyılı Maarif Modeli 9. sınıf öğretim programları",
+    "semanticDuplicateLimit": "No repeated stem with cosmetic-only changes"
+  }
+}
