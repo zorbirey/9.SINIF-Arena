@@ -1,0 +1,60 @@
+/* 9. SINIF ARENA — approved mobile TEST ALANI / TEST SONUCU standard */
+:root{--mobile-max:560px}
+@media(max-width:700px){
+  body{font-size:20px}
+  .topbar{min-height:64px}
+  .brand{font-size:18px}
+  .chip{font-size:15px;padding:8px 12px}
+  .view{padding-bottom:78px}
+  .view-title h2{font-size:30px;line-height:1.08}
+  .view-title small{font-size:17px}
+  .quick-grid button,.lesson-grid button,.tasks button,.tool-grid button,.exam-card{font-size:18px}
+  .quick-grid button b,.lesson-grid button b,.tasks button b,.tool-grid button b,.exam-card b{font-size:20px}
+  .quick-grid button small,.lesson-grid button small,.tasks button small,.tool-grid button small,.exam-card small{font-size:16px;line-height:1.35}
+  .bottom-nav{height:66px}
+  .bottom-nav button span{font-size:12px}
+
+  /* TEST ALANI */
+  #questionOverlay{background:#020817;align-items:flex-start;overflow:auto;padding:0}
+  #questionOverlay .question-modal{position:relative;width:100%;max-width:var(--mobile-max);min-height:100dvh;margin:0 auto;padding:18px 16px 22px;background:linear-gradient(180deg,#071a31 0,#020817 32%,#020817 100%);border:0;border-radius:0;overflow:hidden}
+  #questionOverlay .question-modal:before{content:"";position:absolute;inset:12% -8% 8%;background:var(--zeus) center 18%/85% auto no-repeat;opacity:.12;filter:saturate(.8) contrast(1.08);pointer-events:none}
+  #questionOverlay .question-head,#questionOverlay .question-card,#questionOverlay .question-actions{position:relative;z-index:1}
+  #questionOverlay .question-head{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:14px}
+  #questionOverlay .question-head>span:first-child{font-size:24px;font-weight:900;color:#f6f9ff}
+  #questionOverlay #qDifficulty{font-size:14px;font-weight:800;padding:8px 12px;border-radius:999px;background:#12395e;color:#9be7ff}
+  #questionOverlay .question-head .progress{grid-column:1/-1;height:8px;border-radius:999px;background:#0b2a49;overflow:hidden}
+  #questionOverlay #qCounter{grid-column:1/-1;font-size:16px;color:#9db4cd;text-align:right}
+  #questionOverlay .question-card{padding:20px 16px 18px;border-radius:22px;background:rgba(7,26,49,.88);border:1px solid #1d5b8b;box-shadow:0 12px 36px rgba(0,0,0,.25)}
+  #questionOverlay .question-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+  #questionOverlay .question-meta small{font-size:14px;font-weight:800;letter-spacing:.04em;color:#79ddff}
+  #questionOverlay #qTimer{font-size:17px;color:#f0c34f}
+  #questionOverlay #qText{font-size:25px;line-height:1.38;margin:8px 0 20px;color:#fff;text-wrap:pretty}
+  #questionOverlay .options{display:grid;gap:12px}
+  #questionOverlay .option{min-height:64px;width:100%;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;text-align:left;padding:12px 14px;border-radius:16px;border:1px solid #24537d;background:rgba(3,18,34,.94);color:#f6f9ff;font-size:20px;line-height:1.3}
+  #questionOverlay .option i{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;font-style:normal;font-weight:900;background:#0c3458;color:#8fe6ff;font-size:18px}
+  #questionOverlay .option.correct{border-color:#31d3a6;background:rgba(14,73,62,.92)}
+  #questionOverlay .option.wrong{border-color:#ff7080;background:rgba(83,24,35,.92)}
+  #questionOverlay .question-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;padding-bottom:max(4px,env(safe-area-inset-bottom))}
+  #questionOverlay .question-actions button{min-height:54px;border-radius:15px;font-size:17px;font-weight:850}
+  #questionOverlay #nextQuestion{grid-column:1/-1;min-height:60px;font-size:19px;background:linear-gradient(135deg,#d9a72d,#f0c34f);color:#211600}
+
+  /* TEST SONUCU */
+  #resultOverlay{background:#020817;align-items:flex-start;overflow:auto;padding:0}
+  #resultOverlay .result-modal{position:relative;width:100%;max-width:var(--mobile-max);min-height:100dvh;margin:0 auto;padding:28px 16px max(28px,env(safe-area-inset-bottom));background:radial-gradient(circle at 50% 3%,#133e70 0,#06172e 38%,#020817 75%);border:0;border-radius:0;text-align:center;overflow:hidden}
+  #resultOverlay .result-modal:before{content:"";position:absolute;inset:0;background:var(--zeus) center 5%/78% auto no-repeat;opacity:.08;pointer-events:none}
+  #resultOverlay .result-inner{position:relative;z-index:1}
+  #resultOverlay .result-kicker{font-size:14px;letter-spacing:.15em;color:#79ddff;font-weight:900}
+  #resultOverlay h2{font-size:34px;margin:8px 0 4px}
+  #resultOverlay .score-ring{width:150px;height:150px;margin:22px auto;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#071a31 55%,transparent 57%),conic-gradient(#31d3a6 var(--score,0%),#12395e 0);box-shadow:0 0 34px rgba(49,211,166,.16)}
+  #resultOverlay .score-ring b{font-size:42px;color:#31d3a6}
+  #resultOverlay .score-ring small{display:block;font-size:13px;color:#9db4cd}
+  #resultOverlay .result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+  #resultOverlay .result-stats div{padding:15px 8px;border:1px solid #17466f;border-radius:16px;background:rgba(7,26,49,.88)}
+  #resultOverlay .result-stats b{display:block;font-size:28px}
+  #resultOverlay .result-stats small{font-size:13px;color:#9db4cd}
+  #resultOverlay .result-message{padding:16px;border-radius:16px;background:rgba(10,36,67,.9);color:#c8d9e8;font-size:17px;line-height:1.45;text-align:left}
+  #resultOverlay .result-actions{display:grid;gap:10px;margin-top:18px}
+  #resultOverlay .result-actions button{min-height:58px;border-radius:15px;font-size:18px;font-weight:900}
+  #resultOverlay .result-primary{background:linear-gradient(135deg,#1b92ff,#48d8ff);color:#021120;border:0}
+  #resultOverlay .result-secondary{background:#071a31;color:#fff;border:1px solid #24537d}
+}
