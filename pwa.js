@@ -1,16 +1,14 @@
 (function(){
   try{
-    var fix=document.createElement('style');
-    fix.textContent='.gate:before{background-image:var(--arena-gate-zeus,none)!important}';
-    document.head.appendChild(fix);
-    fetch('./style.css?v=13202',{cache:'no-store'}).then(function(r){return r.text()}).then(function(css){
-      var m=css.match(/--zeus\s*:\s*url\((?:"|\')?([^"\')]+)(?:"|\')?\)/i);
-      if(m&&m[1]) document.documentElement.style.setProperty('--arena-gate-zeus','url("'+m[1]+'")');
-    }).catch(function(){});
+    document.documentElement.style.setProperty('--zeus','url("./zeus.svg")');
   }catch(e){}
+
   if('serviceWorker' in navigator){
-    window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js?v=13202').catch(function(){});});
+    window.addEventListener('load',function(){
+      navigator.serviceWorker.register('./sw.js?v=13203').catch(function(){});
+    });
   }
+
   var deferredPrompt=null;
   var btn=document.getElementById('installAppBtn');
   window.addEventListener('beforeinstallprompt',function(e){
@@ -18,6 +16,7 @@
     deferredPrompt=e;
     if(btn)btn.hidden=false;
   });
+
   if(btn){
     btn.addEventListener('click',async function(){
       if(!deferredPrompt)return;
@@ -27,5 +26,8 @@
       btn.hidden=true;
     });
   }
-  window.addEventListener('appinstalled',function(){if(btn)btn.hidden=true;});
+
+  window.addEventListener('appinstalled',function(){
+    if(btn)btn.hidden=true;
+  });
 })();
