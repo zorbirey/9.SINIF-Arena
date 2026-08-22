@@ -82,11 +82,16 @@ public class MainActivity extends Activity {
         ImageView zeus = new ImageView(this);
         zeus.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         zeus.setAdjustViewBounds(true);
+        zeus.setBackgroundColor(Color.TRANSPARENT);
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inPreferredConfig = Bitmap.Config.RGB_565;
+            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+            options.inScaled = true;
             Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.zeus_splash, options);
-            if (bm != null) zeus.setImageBitmap(bm);
+            if (bm != null) {
+                zeus.setImageBitmap(bm);
+                zeus.setImageAlpha(255);
+            }
         } catch (Throwable ignored) {}
         LinearLayout.LayoutParams imageLp = new LinearLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f);
