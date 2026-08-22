@@ -2,16 +2,20 @@
   "batch": "V23-BATCH01",
   "count": 1000,
   "target": 8000,
-  "status": "active-with-semantic-diversity-review-pending",
+  "status": "semantic-unique",
   "active": true,
-  "activationApprovedByUser": true,
-  "qualityNote": "Structural QA passes. Some verbal families still contain repeated stems, so this batch remains flagged for semantic-diversity rewrite even though it is active in runtime.",
-  "requirements": {
+  "qualityGate": {
+    "exactDuplicateCount": 0,
+    "normalizedDuplicateCount": 0,
+    "semanticKeyDuplicateCount": 0,
+    "cosmeticOnlyVariationAllowed": false,
     "optionsPerQuestion": 5,
     "singleCorrectAnswer": true,
     "explanationRequired": true,
-    "uniqueIdRequired": true,
-    "curriculumSource": "MEB Türkiye Yüzyılı Maarif Modeli 9. sınıf öğretim programları",
-    "semanticDuplicateLimit": "Review pending for repeated stems"
-  }
+    "uniqueIdRequired": true
+  },
+  "normalizationRule": "Numbers, punctuation, symbols, whitespace and case are normalized before duplicate comparison.",
+  "semanticRule": "subject + unit + skill + task + context combination must be unique",
+  "curriculumSource": "MEB Türkiye Yüzyılı Maarif Modeli 9. sınıf öğretim programları",
+  "note": "Automated semantic checks cannot mathematically prove human-level meaning uniqueness; V23 was rewritten to remove known repeated verbal stems and cosmetic numeric copies, and runtime QA rejects exact, normalized and semantic-key duplicates."
 }
