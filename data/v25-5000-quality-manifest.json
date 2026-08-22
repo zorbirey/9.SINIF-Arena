@@ -1,0 +1,33 @@
+{
+  "targetNewQuestions": 5000,
+  "activeBase": 13200,
+  "targetActiveTotal": 18200,
+  "blockSize": 1000,
+  "blocks": 5,
+  "status": "authoring",
+  "standards": {
+    "grade": 9,
+    "optionsPerQuestion": 5,
+    "singleCorrectAnswer": true,
+    "explanationRequired": true,
+    "uniqueIdRequired": true,
+    "curriculum": "MEB Türkiye Yüzyılı Maarif Modeli 9. sınıf",
+    "semanticUniqueness": true,
+    "cosmeticVariantsCountAsNew": false,
+    "exactDuplicateCount": 0,
+    "normalizedDuplicateCount": 0,
+    "semanticKeyDuplicateCount": 0,
+    "strongDistractorsRequired": true
+  },
+  "subjects": [
+    "Matematik",
+    "Fizik",
+    "Kimya",
+    "Biyoloji",
+    "Türk Dili ve Edebiyatı",
+    "Tarih",
+    "Coğrafya",
+    "İngilizce",
+    "Din Kültürü ve Ahlak Bilgisi"
+  ]
+}
