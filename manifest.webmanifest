@@ -2,8 +2,8 @@
   "id": "./pwa-latest.html",
   "name": "9. Sınıf Arena 2027",
   "short_name": "9.Sınıf Arena",
-  "description": "Zeus Koçluğu, soru çözme, ortak sınavlar, Akıllı Notlar ve 13.200 aktif soruluk Arena.",
-  "start_url": "./pwa-latest.html?v=13200",
+  "description": "Zeus Koçluğu, soru çözme, ortak sınavlar ve Akıllı Notlar içeren 9. Sınıf Arena.",
+  "start_url": "./pwa-latest.html?v=13203",
   "scope": "./",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui"],
@@ -15,6 +15,6 @@
   "categories": ["education", "productivity"],
   "prefer_related_applications": false,
   "icons": [
-    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+    {"src":"icon.svg?v=13203","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
   ]
 }
