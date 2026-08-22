@@ -6,7 +6,8 @@ on:
     branches: [ main ]
     paths:
       - 'android-wrapper/**'
-      - 'assets/zeus-real-v10.webp'
+      - 'zeus.svg'
+      - 'icon.svg'
       - '.github/workflows/build-arena-apk.yml'
 
 permissions:
@@ -23,10 +24,12 @@ jobs:
           java-version: '17'
       - uses: android-actions/setup-android@v3
 
-      - name: Android 16 SDK kur
+      - name: Android 16 SDK ve SVG donusturucu kur
         run: |
           yes | sdkmanager --licenses >/dev/null || true
           sdkmanager "platforms;android-36" "build-tools;36.0.0"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin
 
       - name: Giris ekranina Maarif Modeli bilgilendirmesi ekle
         run: |
@@ -43,7 +46,7 @@ jobs:
               p.write_text(s,encoding='utf-8')
           PY
 
-      - name: APK yerel arayuzunu ve Veli Panelini hazirla
+      - name: APK yerel arayuzunu, ikonu ve Zeus kaynaklarini hazirla
         run: |
           set -e
           mkdir -p android-wrapper/app/src/main/res/drawable-nodpi
@@ -52,15 +55,23 @@ jobs:
           cp android-wrapper/app/src/main/assets/index.html android-wrapper/app/src/main/assets/student.html
           cp android-wrapper/app/src/main/assets/parent-shell.html android-wrapper/app/src/main/assets/index.html
 
-          cp assets/zeus-real-v10.webp android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
-          cp assets/zeus-real-v10.webp android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
-          cp assets/zeus-real-v10.webp android-wrapper/app/src/main/assets/zeus.webp
+          # Android ikonu: web kısayolu veya tarayıcı rozeti değil, Arena'nın kendi SVG ikonu.
+          rsvg-convert -w 1024 -h 1024 icon.svg -o android-wrapper/app/src/main/res/drawable-nodpi/app_icon.png
 
-          file android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
-          file android-wrapper/app/src/main/assets/zeus.webp
+          # Açılış görseli: düşük çözünürlüklü WebP yerine yüksek çözünürlüklü SVG'den üretilir.
+          rsvg-convert -w 1600 -h 1800 zeus.svg -o android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.png
+
+          # WebView içindeki Zeus ve filigranlar vektör olarak kalır, büyütülünce pikselleşmez.
+          cp zeus.svg android-wrapper/app/src/main/assets/zeus.svg
+          sed -i 's/zeus\.webp/zeus.svg/g' android-wrapper/app/src/main/assets/student.html
+          sed -i 's/zeus\.webp/zeus.svg/g' android-wrapper/app/src/main/assets/index.html
+
+          file android-wrapper/app/src/main/res/drawable-nodpi/app_icon.png
+          file android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.png
           grep -q "9. Sınıf Arena Veli Paneli" android-wrapper/app/src/main/assets/index.html
           grep -q "student.html" android-wrapper/app/src/main/assets/index.html
           grep -q "Süre dolup test sonlandı" android-wrapper/app/src/main/assets/index.html
+          grep -q "zeus.svg" android-wrapper/app/src/main/assets/student.html
 
       - name: Gradle 9.5 kur
         run: |
@@ -87,7 +98,7 @@ jobs:
         with:
           tag_name: demo-latest
           name: 9. Sınıf Arena Demo APK
-          body: Android 16 uyumlu güncel 9. Sınıf Arena demo APK. Veli Paneli, Maarif Modeli bilgilendirmesi ve süre aşımı raporu dahildir.
+          body: Android 16 uyumlu güncel 9. Sınıf Arena demo APK. Yüksek çözünürlüklü Zeus açılışı, sabit Arena ikonu, vektör Zeus filigranı, Veli Paneli, Maarif Modeli bilgilendirmesi ve süre aşımı raporu dahildir.
           prerelease: true
           make_latest: false
           files: 9-Sinif-Arena-Demo.apk
