@@ -1,4 +1,4 @@
-const CACHE='arena9-root-v14';
+const CACHE='arena9-root-v15';
 const CORE=['./index.html','./arena-ui.css','./arena-visual-v13.css','./arena-revision-v11.css','./arena-revision-v11.js','./app.js','./mobile-results.js','./active-question-engine-v2.js','./assets/arena-cover-v14.svg','./assets/arena-watermark-v14.svg','./assets/arena-icon-v14.svg','./mobile-demo/index.html','./mobile-demo/manifest.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});
