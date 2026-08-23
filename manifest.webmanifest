@@ -3,7 +3,7 @@
   "name": "9. Sınıf Arena 2027",
   "short_name": "9.Sınıf Arena",
   "description": "Zeus Koçluğu, ders tekrarı ve Arena soru çözüm merkezi içeren 9. Sınıf Arena.",
-  "start_url": "./mobile-demo/index.html?v=13",
+  "start_url": "./mobile-demo/index.html?v=14",
   "scope": "./",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui"],
@@ -15,6 +15,6 @@
   "categories": ["education", "productivity"],
   "prefer_related_applications": false,
   "icons": [
-    {"src":"assets/arena-icon-v13.webp","sizes":"512x512","type":"image/webp","purpose":"any maskable"}
+    {"src":"assets/arena-icon-v14.svg","sizes":"300x300","type":"image/svg+xml","purpose":"any maskable"}
   ]
 }
