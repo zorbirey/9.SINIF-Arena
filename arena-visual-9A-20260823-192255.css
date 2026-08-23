@@ -1,0 +1,12 @@
+/* 9. SINIF ARENA — PWA ID: 9A-20260823-192255 */
+:root{
+  --arena-hero:url('assets/visual-9A-20260823-192255/hero-9A-20260823-192255.png');
+  --arena-watermark:url('assets/visual-9A-20260823-192255/watermark-9A-20260823-192255.png');
+}
+.zeus-avatar,.zeus-face,.zeus-big{background-image:var(--arena-hero)!important;background-size:cover!important;background-position:center 18%!important;background-repeat:no-repeat!important}
+.view::before{background-image:var(--arena-watermark)!important;background-size:min(78%,480px) auto!important;background-position:center 12%!important;background-repeat:no-repeat!important;opacity:.075!important;filter:none!important}
+.hero{background-image:linear-gradient(90deg,rgba(4,16,34,.98),rgba(4,16,34,.88) 48%,rgba(4,16,34,.20)),var(--arena-hero)!important;background-size:auto,59% auto!important;background-position:center,108% 26%!important;background-repeat:no-repeat!important}
+.coach-banner{background-image:linear-gradient(90deg,rgba(4,16,34,.99),rgba(4,16,34,.90) 62%,rgba(4,16,34,.18)),var(--arena-hero)!important;background-size:auto,43% auto!important;background-position:center,100% 22%!important;background-repeat:no-repeat!important}
+.question-modal::before,.result-modal::before,.note-modal::before,.open-modal::before{background-image:var(--arena-watermark)!important;background-repeat:no-repeat!important;background-position:center 10%!important;background-size:min(82%,460px) auto!important;opacity:.055!important}
+.lesson-summary-card,.arena-question-hero,.arena-mode-card,.rank-card,.leaderboard,.system-card{backdrop-filter:blur(2px)}
+@media(max-width:560px){.view::before{background-size:86% auto!important;opacity:.065!important}.hero{background-size:auto,64% auto!important}.question-modal::before{background-size:90% auto!important}}
