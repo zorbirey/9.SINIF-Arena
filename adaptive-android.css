@@ -1,0 +1,32 @@
+/* 9. SINIF ARENA — Android 10-16 phone/tablet adaptive layer */
+:root{--arena-min-font:16px}
+@media (max-width:1200px){
+  html,body{font-size:18px!important;line-height:1.45!important}
+  #app{width:100%!important;max-width:920px!important;margin:0 auto!important}
+  .view{overflow-y:auto!important;overflow-x:hidden!important;-webkit-overflow-scrolling:touch!important;isolation:isolate!important}
+  .view::before{content:""!important;position:absolute!important;z-index:0!important;left:7%!important;right:7%!important;top:9%!important;height:76%!important;background-image:var(--zeus)!important;background-repeat:no-repeat!important;background-position:center 18%!important;background-size:contain!important;opacity:.18!important;pointer-events:none!important}
+  .view>*{position:relative!important;z-index:1!important}
+  .brand{font-size:18px!important}.chip{font-size:14px!important}.view-title h2{font-size:28px!important}.view-title small{font-size:15px!important}
+  .quick-grid b,.lesson>b,.tasks b,.tool-grid b,.exam-card span b,.premium b{font-size:16px!important;line-height:1.25!important}
+  .quick-grid small,.lesson>small,.tasks small,.tool-grid small,.exam-card small,.premium small,.rank-card span,.demo-note,.report-top small,.settings label{font-size:14px!important;line-height:1.4!important}
+  .bottom-nav button,.bottom-nav button span{font-size:13px!important}.bottom-nav i{font-size:24px!important}
+  .question-card h3,#qText{font-size:24px!important;line-height:1.45!important}.option{font-size:19px!important;line-height:1.35!important;min-height:60px!important}
+  .question-actions button,.note-modal footer button,.open-modal footer button,.info-modal button{font-size:16px!important;min-height:50px!important}
+  .note-grid p,.open-paper p,.info-modal p,.info-modal div{font-size:16px!important;line-height:1.5!important}
+  .settings input,.settings select{font-size:16px!important;min-height:46px!important}
+  .system-card{border:1px solid #24537d;background:rgba(7,26,49,.94);border-radius:14px;padding:14px;color:#eaf6ff}
+  .system-card b{display:block;font-size:17px;margin-bottom:7px;color:#79ddff}.system-card p{font-size:14px;line-height:1.5;margin:0}.system-card strong{color:#f0c34f}
+}
+@media (max-width:700px){
+  #app{max-width:560px!important}.quick-grid,.lesson-grid{grid-template-columns:1fr 1fr!important}.view{padding:12px 12px 92px!important}.hero{min-height:205px!important}.quick-grid button{min-height:100px!important}.lesson{min-height:116px!important}
+}
+@media (min-width:701px) and (max-width:1200px){
+  :root{--top:70px;--nav:78px}
+  .topbar{height:70px!important}.view{inset:70px 0 78px!important;padding:18px 22px 28px!important}
+  .home-grid{display:grid!important;grid-template-columns:1.2fr .8fr!important;grid-template-rows:auto auto!important;gap:14px!important}.hero{grid-row:1/3!important;min-height:430px!important}.coach-banner{min-height:130px!important}.quick-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}.quick-grid button{min-height:112px!important}
+  .lesson-grid{grid-template-columns:repeat(3,1fr)!important;grid-template-rows:none!important;gap:12px!important}.lesson{min-height:150px!important}.lesson>b{font-size:18px!important}.lesson>small{font-size:15px!important}
+  .zeus-grid,.exam-grid{display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-rows:auto!important;gap:12px!important}.zeus-hero,.tasks{grid-column:1/-1!important}
+  .tabs button{font-size:15px!important;padding:12px!important}.rank-card>b{font-size:34px!important}.leaderboard div{font-size:15px!important;min-height:48px!important}
+  #questionOverlay .question-modal,#resultOverlay .result-modal{max-width:760px!important}.question-card h3,#qText{font-size:27px!important}.option{font-size:21px!important;min-height:66px!important}
+}
+@media (min-width:1201px){#app{max-width:920px}}
