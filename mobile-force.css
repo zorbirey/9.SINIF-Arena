@@ -1,0 +1,16 @@
+@media(max-width:700px){
+html,body{font-size:18px!important}
+.view{overflow-y:auto!important;overflow-x:hidden!important;padding:12px 12px 28px!important}
+.view::before{opacity:.26!important;background-size:min(88vw,480px) auto!important;background-position:center 12%!important}
+.view-title h2{font-size:30px!important}.view-title small{font-size:17px!important}
+.quick-grid b,.lesson>b,.tasks b,.tool-grid b,.exam-card b,.premium b{font-size:18px!important;line-height:1.25!important}
+.quick-grid small,.lesson>small,.tasks small,.tool-grid small,.exam-card small,.premium small,.rank-card small,.rank-card span,.report-top small,.demo-note,.settings label{font-size:15px!important;line-height:1.4!important}
+.coach-banner b,.zeus-hero h3{font-size:19px!important}.coach-banner small,.zeus-hero p{font-size:16px!important;line-height:1.45!important}
+.quick-grid button{min-height:108px!important;padding:12px!important}.lesson{min-height:126px!important;padding:11px!important}.tasks button{min-height:78px!important}.tool-grid button{min-height:90px!important}.exam-card{min-height:118px!important}
+.tabs button{font-size:15px!important;padding:11px 4px!important}.leaderboard h4,.bars h4{font-size:16px!important}.leaderboard div,.bar-row{font-size:15px!important}.settings input,.settings select{font-size:18px!important}
+.bottom-nav{height:78px!important}.bottom-nav button span{font-size:14px!important}.bottom-nav i{font-size:27px!important}
+.question-head>span:first-child{font-size:25px!important}#qDifficulty,#qCounter,.question-meta small,#qTimer{font-size:16px!important}#qText{font-size:26px!important;line-height:1.45!important}.option{font-size:21px!important;line-height:1.4!important;min-height:68px!important}.question-actions button{font-size:18px!important;min-height:56px!important}#nextQuestion{font-size:20px!important;min-height:62px!important}
+.note-modal header small{font-size:15px!important}.note-modal header h3{font-size:22px!important}.note-modal>h4{font-size:20px!important}.note-grid article>b{font-size:14px!important}.note-grid p{font-size:18px!important;line-height:1.5!important}.open-paper p{font-size:21px!important}.open-paper textarea{font-size:19px!important}.info-modal p,.info-modal div{font-size:18px!important;line-height:1.55!important}
+.zeus-avatar,.zeus-face,.zeus-big{background-image:var(--zeus)!important;background-position:center 18%!important;background-size:cover!important}
+.hero,.coach-banner{background-image:linear-gradient(90deg,rgba(6,21,45,.94),rgba(6,21,45,.72) 55%,rgba(6,21,45,.18)),var(--zeus)!important}
+}
