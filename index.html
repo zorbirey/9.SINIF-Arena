@@ -6,8 +6,9 @@
   <meta name="theme-color" content="#020817">
   <title>9. Sınıf Arena 2027</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="mobile-real.css?v=3">
-  <link rel="stylesheet" href="adaptive-android.css?v=1">
+  <link rel="stylesheet" href="mobile-real.css?v=9">
+  <link rel="stylesheet" href="adaptive-android.css?v=9">
+  <link rel="stylesheet" href="mobile-force.css?v=9">
 </head>
 <body>
 <div id="app">
@@ -79,17 +80,14 @@
   <nav class="bottom-nav"><button class="active" data-view="home" onclick="go('home')"><i>⌂</i><span>ARENA</span></button><button data-view="lessons" onclick="go('lessons')"><i>▣</i><span>DERSLER</span></button><button data-view="zeus" onclick="go('zeus')"><i>⚡</i><span>ZEUS</span></button><button data-view="exams" onclick="go('exams')"><i>▤</i><span>SINAVLAR</span></button><button data-view="profile" onclick="go('profile')"><i>◎</i><span>PROFİL</span></button></nav>
 
   <div class="overlay" id="questionOverlay"><section class="modal question-modal"><div class="question-head"><span id="qSubject">Ders</span><span id="qDifficulty">Orta</span><div class="progress"><i id="qProgress"></i></div><b id="qCounter">1/30</b></div><div class="card question-card"><div class="question-meta"><small id="qMode">SERBEST ÇALIŞMA</small><b id="qTimer">Süresiz</b></div><h3 id="qText"></h3><div class="options" id="options"></div></div><div class="question-actions"><button onclick="hint()">💡 İpucu</button><button onclick="solution()">Çözüm Yolu</button><button id="nextQuestion" onclick="nextQ()">Sonraki →</button></div></section></div>
-
   <div class="overlay" id="notesOverlay"><section class="modal note-modal"><header><span class="zeus-face"></span><div><small>AKILLI NOTLAR</small><h3 id="noteSubject">Ders</h3></div><b id="noteCounter">1/2</b></header><h4 id="noteTitle"></h4><div class="note-grid"><article><b>BİLMEN GEREKEN</b><p id="noteInfo"></p></article><article><b>TEMEL KAVRAM</b><p id="noteConcept"></p></article><article class="example"><b>ÖRNEK</b><p id="noteExample"></p></article><article class="warning"><b>DİKKAT</b><p id="noteCaution"></p></article></div><footer><button onclick="notePrev()">← Önceki</button><button onclick="closeNotes()">Kapat</button><button id="noteNext" onclick="noteNext()">Sonraki →</button></footer></section></div>
-
   <div class="overlay" id="openOverlay"><section class="modal open-modal"><header><small id="openTitle">ORTAK SINAV</small><b id="openTimer">40:00</b></header><div class="progress"><i id="openProgress"></i></div><div class="card open-paper"><p id="openQuestion"></p><textarea id="openAnswer" placeholder="Cevabını ve gerekçeni buraya yaz..."></textarea></div><footer><button onclick="openPrev()">← Önceki</button><button onclick="rubric()">Puanlama</button><button id="openNext" onclick="openNext()">Sonraki →</button></footer></section></div>
-
   <div class="overlay" id="infoOverlay"><section class="modal info-modal"><small id="infoKicker">ZEUS</small><h3 id="infoTitle">Bilgi</h3><p id="infoText"></p><div id="infoBox"></div><button onclick="closeInfo()">TAMAM</button></section></div>
   <div class="toast" id="toast"></div>
 </div>
-<script src="zeus-loader.js?v=1"></script>
+<script src="zeus-loader.js?v=9"></script>
 <script src="app.js"></script>
-<script src="mobile-results.js?v=3"></script>
+<script src="mobile-results.js?v=9"></script>
 <script src="data/verified-question-bank-v1.js?v=140"></script>
 <script src="data/verified-question-bank-v1-five-options.js?v=140"></script>
 <script src="data/verified-question-bank-v2-extra.js?v=140"></script>
