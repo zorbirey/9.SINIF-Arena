@@ -1,16 +1,22 @@
-@media(max-width:700px){
-html,body{font-size:18px!important}
-.view{overflow-y:auto!important;overflow-x:hidden!important;padding:12px 12px 28px!important}
-.view::before{opacity:.26!important;background-size:min(88vw,480px) auto!important;background-position:center 12%!important}
-.view-title h2{font-size:30px!important}.view-title small{font-size:17px!important}
-.quick-grid b,.lesson>b,.tasks b,.tool-grid b,.exam-card b,.premium b{font-size:18px!important;line-height:1.25!important}
-.quick-grid small,.lesson>small,.tasks small,.tool-grid small,.exam-card small,.premium small,.rank-card small,.rank-card span,.report-top small,.demo-note,.settings label{font-size:15px!important;line-height:1.4!important}
-.coach-banner b,.zeus-hero h3{font-size:19px!important}.coach-banner small,.zeus-hero p{font-size:16px!important;line-height:1.45!important}
-.quick-grid button{min-height:108px!important;padding:12px!important}.lesson{min-height:126px!important;padding:11px!important}.tasks button{min-height:78px!important}.tool-grid button{min-height:90px!important}.exam-card{min-height:118px!important}
-.tabs button{font-size:15px!important;padding:11px 4px!important}.leaderboard h4,.bars h4{font-size:16px!important}.leaderboard div,.bar-row{font-size:15px!important}.settings input,.settings select{font-size:18px!important}
-.bottom-nav{height:78px!important}.bottom-nav button span{font-size:14px!important}.bottom-nav i{font-size:27px!important}
-.question-head>span:first-child{font-size:25px!important}#qDifficulty,#qCounter,.question-meta small,#qTimer{font-size:16px!important}#qText{font-size:26px!important;line-height:1.45!important}.option{font-size:21px!important;line-height:1.4!important;min-height:68px!important}.question-actions button{font-size:18px!important;min-height:56px!important}#nextQuestion{font-size:20px!important;min-height:62px!important}
-.note-modal header small{font-size:15px!important}.note-modal header h3{font-size:22px!important}.note-modal>h4{font-size:20px!important}.note-grid article>b{font-size:14px!important}.note-grid p{font-size:18px!important;line-height:1.5!important}.open-paper p{font-size:21px!important}.open-paper textarea{font-size:19px!important}.info-modal p,.info-modal div{font-size:18px!important;line-height:1.55!important}
+@media(max-width:1200px){
+html,body{font-size:18px!important;line-height:1.45!important}
+.view{overflow-y:auto!important;overflow-x:hidden!important;padding:14px 14px 96px!important;isolation:isolate!important}
+.view::before{display:none!important}
+.zeus-watermark{position:absolute!important;z-index:0!important;left:8%!important;right:8%!important;top:90px!important;height:min(62vh,620px)!important;background-repeat:no-repeat!important;background-position:center top!important;background-size:contain!important;opacity:.28!important;filter:saturate(.88) contrast(1.08)!important;pointer-events:none!important}
+.view>*:not(.zeus-watermark){position:relative!important;z-index:1!important}
+.view-title h2{font-size:30px!important;line-height:1.15!important}.view-title small{font-size:17px!important;line-height:1.35!important}
+.quick-grid b,.lesson>b,.tasks b,.tool-grid b,.exam-card b,.premium b{font-size:18px!important;line-height:1.3!important}
+.quick-grid small,.lesson>small,.tasks small,.tool-grid small,.exam-card small,.premium small,.rank-card small,.rank-card span,.report-top small,.demo-note,.settings label{font-size:15px!important;line-height:1.45!important}
+.coach-banner b,.zeus-hero h3{font-size:20px!important}.coach-banner small,.zeus-hero p{font-size:16px!important;line-height:1.5!important}
+.quick-grid button{min-height:112px!important;padding:13px!important}.lesson{min-height:130px!important;padding:12px!important}.tasks button{min-height:82px!important;padding:10px!important}.tool-grid button{min-height:94px!important;padding:11px!important}.exam-card{min-height:122px!important;padding:12px!important}
+.tabs button{font-size:15px!important;padding:12px 5px!important}.leaderboard h4,.bars h4{font-size:17px!important}.leaderboard div,.bar-row{font-size:15px!important;line-height:1.4!important}.settings input,.settings select{font-size:18px!important}
+.bottom-nav{height:80px!important}.bottom-nav button span{font-size:14px!important}.bottom-nav i{font-size:28px!important}
+.question-head>span:first-child{font-size:25px!important}#qDifficulty,#qCounter,.question-meta small,#qTimer{font-size:16px!important}#qText{font-size:26px!important;line-height:1.5!important}.option{font-size:21px!important;line-height:1.45!important;min-height:70px!important;padding:13px 14px!important}.question-actions button{font-size:18px!important;min-height:58px!important}#nextQuestion{font-size:20px!important;min-height:64px!important}
+.note-modal header small{font-size:15px!important}.note-modal header h3{font-size:22px!important}.note-modal>h4{font-size:20px!important}.note-grid article>b{font-size:14px!important}.note-grid p{font-size:18px!important;line-height:1.55!important}.open-paper p{font-size:21px!important;line-height:1.5!important}.open-paper textarea{font-size:19px!important}.info-modal p,.info-modal div{font-size:18px!important;line-height:1.6!important}
 .zeus-avatar,.zeus-face,.zeus-big{background-image:var(--zeus)!important;background-position:center 18%!important;background-size:cover!important}
 .hero,.coach-banner{background-image:linear-gradient(90deg,rgba(6,21,45,.94),rgba(6,21,45,.72) 55%,rgba(6,21,45,.18)),var(--zeus)!important}
+}
+@media(min-width:701px) and (max-width:1200px){
+.view{padding:18px 22px 106px!important}.zeus-watermark{left:18%!important;right:18%!important;top:110px!important;height:min(68vh,700px)!important;opacity:.24!important}
+.lesson>b{font-size:19px!important}.lesson>small{font-size:16px!important}.quick-grid b,.tasks b,.tool-grid b,.exam-card b{font-size:19px!important}.quick-grid small,.tasks small,.tool-grid small,.exam-card small{font-size:16px!important}
 }
