@@ -1,11 +1,13 @@
 {
-  "name":"9. Sınıf Arena 2027 Demo",
+  "name":"9. Sınıf Arena 2027",
   "short_name":"9.Sınıf Arena",
-  "start_url":"./index.html",
-  "scope":"./",
+  "start_url":"./index.html?v=7",
+  "scope":"../",
   "display":"standalone",
   "background_color":"#020817",
   "theme_color":"#020817",
-  "orientation":"portrait-primary",
+  "orientation":"any",
+  "categories":["education"],
+  "description":"Android 10–16 telefon ve tablet uyumlu 9. Sınıf Arena eğitim uygulaması.",
   "icons":[{"src":"../icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
