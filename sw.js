@@ -1,4 +1,4 @@
-const BUILD_ID='9A-20260823-232339';
+const BUILD_ID='9A-20260824-000036';
 const CACHE=`arena9-${BUILD_ID}`;
 const CORE=[
   `./index.html?build=${BUILD_ID}`,
