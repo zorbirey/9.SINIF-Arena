@@ -6,6 +6,8 @@
   <meta name="theme-color" content="#020817">
   <title>9. Sınıf Arena 2027</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile-real.css?v=3">
+  <link rel="stylesheet" href="adaptive-android.css?v=1">
 </head>
 <body>
 <div id="app">
@@ -65,7 +67,13 @@
     <div class="tabs"><button data-tab="rank" class="active" onclick="switchTab('rank')">🏆 SIRALAMA</button><button data-tab="report" onclick="switchTab('report')">📊 RAPOR</button><button data-tab="settings" onclick="switchTab('settings')">⚙️ AYARLAR</button></div>
     <section class="pane active" id="pane-rank"><div class="rank-pair"><div class="card rank-card"><small>🇹🇷 TÜRKİYE SIRASI</small><b id="trRank">#—</b><span id="trMeta">Demo sıralama</span></div><div class="card rank-card"><small>📍 <span id="cityLabel">İL</span> SIRASI</small><b id="cityRank">#—</b><span id="cityMeta">Demo sıralama</span></div></div><div class="card leaderboard"><h4>ARENA LİDERLİK TABLOSU</h4><div><b>1</b><span>⚡ Atlas_09</span><em>2.480 soru</em></div><div><b>2</b><span>Nova_34</span><em>2.315 soru</em></div><div><b>3</b><span>MatKing</span><em>2.174 soru</em></div><div class="me"><b id="myRank">—</b><span id="myName">Sen</span><em id="mySolved">0 soru</em></div></div><div class="card demo-note">Sıralama toplam çözülen benzersiz soru sayısına göre ilerler. Eşitlikte doğruluk oranı kullanılır. <b>DEMO VERİSİ</b></div></section>
     <section class="pane" id="pane-report"><div class="report-top"><div><b id="rSolved">0</b><small>Çözülen</small></div><div><b id="rAccuracy">%0</b><small>Doğruluk</small></div><div><b id="rXp">0</b><small>XP</small></div></div><div class="card bars" id="bars"></div></section>
-    <section class="pane settings" id="pane-settings"><label>KULLANICI ADI<input id="nameInput" maxlength="20" value="Arena Öğrencisi"></label><label>İL<select id="provinceSelect"></select></label><button onclick="saveSettings()">PROFİLİ KAYDET</button><div class="premium"><span><b>⚡ ARENA PREMIUM</b><small>Reklamsız kullanım • gelişmiş raporlar • ek paketler</small></span><button onclick="toast('Premium ekranı sonraki sürümde bağlanacak.')">İNCELE</button></div></section>
+    <section class="pane settings" id="pane-settings">
+      <label>KULLANICI ADI<input id="nameInput" maxlength="20" value="Arena Öğrencisi"></label>
+      <label>İL<select id="provinceSelect"></select></label>
+      <button onclick="saveSettings()">PROFİLİ KAYDET</button>
+      <div class="system-card"><b>📱 SİSTEM GEREKSİNİMLERİ</b><p><strong>Minimum:</strong> Android 10<br><strong>Önerilen:</strong> Android 12 veya üzeri<br><strong>Desteklenen:</strong> Android 10–16<br><strong>Cihaz:</strong> Telefon ve tablet<br>Güncel Chrome / Android System WebView önerilir.</p></div>
+      <div class="premium"><span><b>⚡ ARENA PREMIUM</b><small>Reklamsız kullanım • gelişmiş raporlar • ek paketler</small></span><button onclick="toast('Premium ekranı sonraki sürümde bağlanacak.')">İNCELE</button></div>
+    </section>
   </main>
 
   <nav class="bottom-nav"><button class="active" data-view="home" onclick="go('home')"><i>⌂</i><span>ARENA</span></button><button data-view="lessons" onclick="go('lessons')"><i>▣</i><span>DERSLER</span></button><button data-view="zeus" onclick="go('zeus')"><i>⚡</i><span>ZEUS</span></button><button data-view="exams" onclick="go('exams')"><i>▤</i><span>SINAVLAR</span></button><button data-view="profile" onclick="go('profile')"><i>◎</i><span>PROFİL</span></button></nav>
@@ -79,7 +87,9 @@
   <div class="overlay" id="infoOverlay"><section class="modal info-modal"><small id="infoKicker">ZEUS</small><h3 id="infoTitle">Bilgi</h3><p id="infoText"></p><div id="infoBox"></div><button onclick="closeInfo()">TAMAM</button></section></div>
   <div class="toast" id="toast"></div>
 </div>
+<script src="zeus-loader.js?v=1"></script>
 <script src="app.js"></script>
+<script src="mobile-results.js?v=3"></script>
 <script src="data/verified-question-bank-v1.js?v=140"></script>
 <script src="data/verified-question-bank-v1-five-options.js?v=140"></script>
 <script src="data/verified-question-bank-v2-extra.js?v=140"></script>
