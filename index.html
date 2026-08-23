@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
   <meta name="theme-color" content="#020817">
   <title>9. Sınıf Arena 2027</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="mobile-real.css?v=9">
-  <link rel="stylesheet" href="adaptive-android.css?v=9">
-  <link rel="stylesheet" href="mobile-force.css?v=9">
+  <link rel="stylesheet" href="arena-ui.css?v=10">
 </head>
 <body>
 <div id="app">
@@ -26,9 +23,7 @@
         <div class="xp-row"><span>ARENA XP</span><div class="progress"><i id="xpBar"></i></div><b id="xpText">0/500</b></div>
         <span class="inspired">INSPIRED FROM ZEUS</span>
       </section>
-
       <button class="card coach-banner" onclick="go('zeus')"><span class="zeus-face"></span><span><b>ZEUS KOÇLUĞU</b><small id="coachHome">Bugünkü hedefini tamamla ve Arena seviyeni yükselt.</small></span><em>›</em></button>
-
       <section class="quick-grid">
         <button onclick="startStudy()"><i>🧠</i><b>SORU ÇÖZ</b><small id="solvedHome">0 soru</small></button>
         <button onclick="go('lessons')"><i>📚</i><b>DERSLER</b><small>9 ders • Akıllı Notlar</small></button>
@@ -85,9 +80,8 @@
   <div class="overlay" id="infoOverlay"><section class="modal info-modal"><small id="infoKicker">ZEUS</small><h3 id="infoTitle">Bilgi</h3><p id="infoText"></p><div id="infoBox"></div><button onclick="closeInfo()">TAMAM</button></section></div>
   <div class="toast" id="toast"></div>
 </div>
-<script src="zeus-loader.js?v=9"></script>
-<script src="app.js"></script>
-<script src="mobile-results.js?v=9"></script>
+<script src="app.js?v=10"></script>
+<script src="mobile-results.js?v=10"></script>
 <script src="data/verified-question-bank-v1.js?v=140"></script>
 <script src="data/verified-question-bank-v1-five-options.js?v=140"></script>
 <script src="data/verified-question-bank-v2-extra.js?v=140"></script>
